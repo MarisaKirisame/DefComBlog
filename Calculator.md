@@ -260,8 +260,12 @@ If left or right is 0, we just return the other Expr. Note that I had override e
 
 If left and right are both Lit, we can do our simplification by adding them up.
 
+The case for Mult is very similar:
+
+ - 0:
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTEwOTY5MDI2OCwtMTA5Njk4MjI3NSw3Mj
+eyJoaXN0b3J5IjpbMTc5OTExODI5OCwtMTA5Njk4MjI3NSw3Mj
 YxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMy
 LC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5ND
 UwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0
