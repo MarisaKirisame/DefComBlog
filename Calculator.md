@@ -426,13 +426,13 @@ Huh. Look very familiar...
 
     String compile() {return "env[" + String.valueOf(idx) + "]";}
 
-Isnt this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, and again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime.
+Isnt this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNT
-MyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0
-NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC
-0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3
-NjE0NzU4Myw2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1Nj
-U4NSwtMjA3MDc0MjQ3LDU0NDkyMDQxMSwtMTIzMzM2OTQwOSwx
-ODEzMDkwOTE3XX0=
+eyJoaXN0b3J5IjpbMTU0MDEzNDgyMiw2MTAyMjQ2NTcsLTE4Mj
+U5NzI3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQy
+MTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NS
+w1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4
+ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MD
+c2NiwtNDk4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0x
+MjMzMzY5NDA5XX0=
 -->
