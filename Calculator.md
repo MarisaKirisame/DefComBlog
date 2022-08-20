@@ -255,9 +255,9 @@ OK. On to eval(). Hmm...
       throw new RuntimeException("...");  
     }
 
-What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we dont know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in 
+What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we dont know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in a Mapping, from variable to int. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMzA2MTQxNzUsMzM0NzM2NTk1LC0yMD
-UzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2
-OTUyNDQ4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbLTg2Mjc0NzczOCwzMzQ3MzY1OTUsLTIwNT
+MwOTMxNjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5
+NTI0NDgsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
 -->
