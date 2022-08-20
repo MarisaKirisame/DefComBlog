@@ -271,7 +271,7 @@ Let's get back to programming, and fill out the case for Plus.
     Expr right = this.right.simp();
     return mkPlus(left, right);
 
-We begin by traversing left and right, simplifying them. Note that the above code is universal - we can also do this for the simpl() for Mult (
+We begin by traversing left and right, simplifying them. Note that the above code is universal - we can also do this for the simpl() for Mult (of course, we have to change mkPlus into mkMult). This is because if a == x and b == y, mkPlus(a, b) == mkPlus(x, y).
 
 If left or right is 0, we just return the other Expr.
 
@@ -293,10 +293,10 @@ Note that I had override equals for all the Expr. I wont show them because they 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg5NzM1NTcwNiwtMTA5Njk4MjI3NSw3Mj
-YxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMy
-LC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5ND
-UwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0
-NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MS
-wtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbMjYyMjU3Mjg4LC0xMDk2OTgyMjc1LDcyNj
+ExMDgzNiwxNzU2NjM3MjI5LC02OTgzODg1MiwzMjIwMjA3MzIs
+LTExMzUzNzU0NzksODQwNzQ5MzE3LC00NTMzNDA4ODcsMTk0NT
+A0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMxNjIsLTExMDQ1MzQ2
+OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC
+02NjE0NzIyMzldfQ==
 -->
