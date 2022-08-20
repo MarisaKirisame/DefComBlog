@@ -78,7 +78,7 @@ Unlike Literal, Plus and Multiply contain more JSON as children, in left and rig
         default -> throw new RuntimeException("Unexpected: " + type);  
     };  
 
-Now calling prettyPrint on our example return "((1+2)*(3+4))". Look pretty neat.
+Now calling prettyPrint() on our example return "((1+2)*(3+4))". Look pretty neat.
 
 Moving on to the evaluator, which take a JSON, and return an Int:
 
@@ -238,5 +238,6 @@ Right now our language is really, really boring. It react the same (output a con
 
 The easiest way to do this is to add variable to the language. For now 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC02Nj
+E0NzIyMzldfQ==
 -->
