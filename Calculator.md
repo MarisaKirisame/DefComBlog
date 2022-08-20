@@ -251,9 +251,11 @@ Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepti
     int eval(Map<String, Integer> env) {return env.get(name);}
 
 Now for Var, we lookup the value from the environment.
+
+Pretty Good! I had wrote another example, which multiply 2 2*2 matrix, and add up all the cell in the resulting matrix, into a single number. 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODQwNzQ5MzE3LC00NTMzNDA4ODcsMTk0NT
-A0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMxNjIsLTExMDQ1MzQ2
-OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC
-02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbLTEwODg0ODA0MjgsODQwNzQ5MzE3LC00NT
+MzNDA4ODcsMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMx
+NjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0ND
+gsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
 -->
