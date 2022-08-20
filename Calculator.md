@@ -262,10 +262,14 @@ What do I put in here? Seems like we are stuck! For a good reason: we now have u
 
 Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepting the env and doing nothing for it. For Plus and Mult, we pass env into the recursive call. 
 
-Now for Var, we look
+    int eval(Map<String, Integer> env) {  
+      return env.get(name);  
+    }
+
+Now for Var, we lookup the value from the environment.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NTE4MzQwODIsMTk0NTA0MzM4NywzMz
-Q3MzY1OTUsLTIwNTMwOTMxNjIsLTExMDQ1MzQ2OTMsLTE4ODQ5
-OTAxMzMsLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC02NjE0NzIyMz
-ldfQ==
+eyJoaXN0b3J5IjpbLTQ1MzM0MDg4NywxOTQ1MDQzMzg3LDMzND
+czNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5
+MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2NzEsLTY2MTQ3MjIzOV
+19
 -->
