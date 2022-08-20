@@ -307,14 +307,14 @@ The change for Lit, Plus, Mult are all mechanical and not be shown, but we are s
       return env[idx];  
     }
 
-
+How do we turn the old Map<String, Integer> env, to a Map<String, Integer> loc and int[] env though? 
 abstract void locate(Map<String, Integer> loc);
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTkwMzE0ODcwNSwtMTIzMzM2OTQwOSwxOD
-EzMDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgsLTEzOTEzODQ3
-ODQsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MTMzNzU1NCwxNj
-c2ODgzMzExLC0xMzI1ODYwMzg3LC0yMDEyNjYxOTE0LDc3NjI1
-NTQ4MiwtNDc3NzAxMjA2LC0xMDk2OTgyMjc1LDcyNjExMDgzNi
-wxNzU2NjM3MjI5LC02OTgzODg1MiwzMjIwMjA3MzIsLTExMzUz
-NzU0NzldfQ==
+eyJoaXN0b3J5IjpbNTQ0OTIwNDExLC0xMjMzMzY5NDA5LDE4MT
+MwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OCwtMTM5MTM4NDc4
+NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMTUxMzM3NTU0LDE2Nz
+Y4ODMzMTEsLTEzMjU4NjAzODcsLTIwMTI2NjE5MTQsNzc2MjU1
+NDgyLC00Nzc3MDEyMDYsLTEwOTY5ODIyNzUsNzI2MTEwODM2LD
+E3NTY2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDczMiwtMTEzNTM3
+NTQ3OV19
 -->
