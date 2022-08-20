@@ -211,7 +211,7 @@ Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepti
 
 Now for Var, we lookup the value from the environment.
 
-Pretty Good! I had wrote another example, which multiply 2 n*n matrix, where n = 2, and add up all the cell in the resulting matrix, into a single number. Running the example on 2 matrix with all cell as 1, will give 8, which is expected. However, printing the matrix will give:
+Pretty Good! I had wrote another example, which multiply 2 n*n matrix, where n = 2, and add up all the cell in the resulting matrix, into a single number. The code is hidden because it is not too related to what we are doing right now. Running the example on 2 matrix with all cell as 1, will give 8, which is expected. However, printing the matrix will give:
 
     ((((0+((0+(a_0_0*b_0_0))+(a_0_1*b_1_0)))+((0+(a_0_0*b_0_1))+(a_0_1*b_1 ...
 
@@ -424,11 +424,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NT
-MyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAw
-NDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC
-0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEz
-MDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0Nz
-U4Myw2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwt
-MjA3MDc0MjQ3XX0=
+eyJoaXN0b3J5IjpbMzQ1NTkyODc4LC05OTg3MTAyMDksLTIwND
+E4ODUwMTQsNzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4
+MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMT
+U0MTM1NDc0NCwtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LDUyNzY4
+MDEyMiwtMTcxMzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4NjcwND
+YxLC01NzYxNDc1ODMsNjc2NDUzNzM0LC0xODY2MjkwNzY2LC00
+OTgyNTY1ODVdfQ==
 -->
