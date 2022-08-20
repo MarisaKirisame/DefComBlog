@@ -265,7 +265,13 @@ The case for Lit and Var is trivial: there is nothing to simplify, so we just {r
 
 By correctness, we mean that, given a program X, X.simp() is equal to X. By equality, X and Y are equal, if and only if forall env, X.eval(env) == Y.eval(env). When writing optimizations, this is critical to keep in mind - we dont want to change the meaning of user program!
 
-Let's get back to programming. For Plus, if left or right is 0, we just return the other Expr.
+Let's get back to programming, and fill out the case for Plus.
+
+    Expr left = this.left.simp();  
+    Expr right = this.right.simp();
+    return 
+
+If left or right is 0, we just return the other Expr.
 
     Expr simp() {  
       if (left.equals(Cal.mkLit(0))) {  
@@ -285,7 +291,7 @@ Note that I had override equals for all the Expr. I wont show them because they 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NTEyODE1MzMsNzI2MTEwODM2LDE3NT
+eyJoaXN0b3J5IjpbLTE3Njk1MDI1NDQsNzI2MTEwODM2LDE3NT
 Y2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDczMiwtMTEzNTM3NTQ3
 OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOTQ1MDQzMzg3LDMzND
 czNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5
