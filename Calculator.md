@@ -254,11 +254,13 @@ Now for Var, we lookup the value from the environment.
 
 Pretty Good! I had wrote another example, which multiply 2 2*2 matrix, and add up all the cell in the resulting matrix, into a single number. Running the example on 2 matrix with all cell as 1, will give 8, which is expected. However, printing the matrix will give:
 
-    enter code here
+    ((((0+((0+(a_0_0*b_0_0))+(a_0_1*b_1_0)))+((0+(a_0_0*b_0_1))+(a_0_1*b_1 ...
+
+Urgh. What a mess! Look like there is a bunch of 0 in our pro
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODgxMTI2MTcsODQwNzQ5MzE3LC00NTMzND
-A4ODcsMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMxNjIs
-LTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNT
-U1OTg4NjcxLC02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbLTQ4ODY2ODQ5MSw4NDA3NDkzMTcsLTQ1Mz
+M0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2
+MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OC
+w1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
 -->
