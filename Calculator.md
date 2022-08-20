@@ -415,13 +415,16 @@ located is changed to return anonymous class, instead of anonymous function:
 
 OK, back onto the point. What is more efficient then the Java Runtime? The Java Compiler! Instead of turning LExpr into Function, we can turn LExpr into a String, which represent some Java code. We can then compile the java code and execute it.
 
-
+    // In LExpr
+    abstract String compile();
+    // In Lit.located
+    String compile() {return String.valueOf(val);}
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTcyNTI5MTAxLC0xNTMyNzAwNDQ2LDE0OD
-IzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5
-MDUsLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEzMDM3NjQ0LC
-0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0NzU4Myw2NzY0
-NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0Mj
-Q3LDU0NDkyMDQxMSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LDY5
-NTg1MzE5Ml19
+eyJoaXN0b3J5IjpbLTEzNjE0NjM0MTgsLTE1MzI3MDA0NDYsMT
+Q4MjM0NDYxNSwtMTA5OTQyMTU3LDE1NDEzNTQ3NDQsLTIzODUx
+NTkwNSwtMTgxNDQ3NTM5NSw1Mjc2ODAxMjIsLTE3MTMwMzc2ND
+QsLTE5NTE5MDcwMjksMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3
+NjQ1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2NTg1LC0yMDcwNz
+QyNDcsNTQ0OTIwNDExLC0xMjMzMzY5NDA5LDE4MTMwOTA5MTcs
+Njk1ODUzMTkyXX0=
 -->
