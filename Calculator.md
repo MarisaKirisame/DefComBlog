@@ -426,13 +426,13 @@ Huh. Look very familiar...
 
     String compile() {return "env[" + String.valueOf(idx) + "]";}
 
-Isnt this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime.
+Isnt this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime. You might recall that this code is also exactly our pp(), which is not a coincidence. PrettyPrinting try to output a representation of the code, which is also what compile() does as oppose to eval(). With compi
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTU0MDEzNDgyMiw2MTAyMjQ2NTcsLTE4Mj
-U5NzI3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQy
-MTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NS
-w1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4
-ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MD
-c2NiwtNDk4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0x
-MjMzMzY5NDA5XX0=
+eyJoaXN0b3J5IjpbLTQ1Njc2ODU2LDYxMDIyNDY1NywtMTgyNT
+k3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIx
+NTcsMTU0MTM1NDc0NCwtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LD
+UyNzY4MDEyMiwtMTcxMzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4
+NjcwNDYxLC01NzYxNDc1ODMsNjc2NDUzNzM0LC0xODY2MjkwNz
+Y2LC00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEy
+MzMzNjk0MDldfQ==
 -->
