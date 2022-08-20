@@ -291,13 +291,13 @@ Ignore the scary title for now. Lets try to make our Interpreter faster. I had i
 The profiler tell me that most time is spend in Map.get(). Why? What is in a Map?
 
 There are multiple ways to implement a Map from String to Int. Most notable examples are search tree, hash map, and a trie.
-However, inorder to lookup a key, they all need to 
+However, inorder to lookup a key, they all need to tr
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MT
-MzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYwMzg3LC0yMDEyNjYx
-OTE0LDc3NjI1NTQ4MiwtNDc3NzAxMjA2LC0xMDk2OTgyMjc1LD
-cyNjExMDgzNiwxNzU2NjM3MjI5LC02OTgzODg1MiwzMjIwMjA3
-MzIsLTExMzUzNzU0NzksODQwNzQ5MzE3LC00NTMzNDA4ODcsMT
-k0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMxNjIsLTExMDQ1
-MzQ2OTNdfQ==
+eyJoaXN0b3J5IjpbNTcxNzI4OTQ1LDE3ODU5MjkwMDcsODc0Mz
+kzMzQ4LDExNTEzMzc1NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4
+NywtMjAxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMT
+A5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4
+NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtND
+UzMzQwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkz
+MTYyXX0=
 -->
