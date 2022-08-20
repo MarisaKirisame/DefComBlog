@@ -387,17 +387,17 @@ is not what we want: everytime the inside function is executed, we are calling a
 
 The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
 
-Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  
+Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our Definitional Interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hu
 
 Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOT
-UxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0NzU4Myw2NzY0NTM3
-MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LD
-U0NDkyMDQxMSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LDY5NTg1
-MzE5Miw1Nzk4NDk4NDgsLTEzOTEzODQ3ODQsMTc4NTkyOTAwNy
-w4NzQzOTMzNDgsMTE1MTMzNzU1NCwxNjc2ODgzMzExLC0xMzI1
-ODYwMzg3XX0=
+eyJoaXN0b3J5IjpbNDcwNDc4Njg4LDUyNzY4MDEyMiwtMTcxMz
+AzNzY0NCwtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxNDc1
+ODMsNjc2NDUzNzM0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUsLT
+IwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEyMzMzNjk0MDksMTgxMzA5
+MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4LC0xMzkxMzg0Nzg0LD
+E3ODU5MjkwMDcsODc0MzkzMzQ4LDExNTEzMzc1NTQsMTY3Njg4
+MzMxMV19
 -->
