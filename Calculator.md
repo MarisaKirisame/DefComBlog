@@ -170,8 +170,7 @@ Now our example look much better - it is just a one-liner.  After the above refa
       }  
     }
 
-We have to now fix the definition for prettyPrint() and evaluate(). While we are at it, let's also move prettyPrint() into Java's toString(), and rename evaluate() into eval(): our code is, and will, remain short and concise. The code for pp(), likewise, is a mechanical transformation, which we will 
-
+We have to now fix the definition for prettyPrint() and evaluate(). While we are at it, let's also move prettyPrint() into Java's toString(), and rename evaluate() into eval(): our code is, and will, remain short and concise. The code for pp(), likewise, is a mechanical transformation, which we will skip presenting.
 
 One problem with the above code, is that it rely heavily on instanceof, and downcasting, which is frown upon in Java. This could be fixed by making pp() and eval() abstract function in Expr, and have each subclass override it.
 
@@ -432,11 +431,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
  -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2NDg5MDAyNywtMjA0MTg4NTAxNCw3NT
-MyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAw
-NDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC
-0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEz
-MDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0Nz
-U4Myw2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwt
-MjA3MDc0MjQ3XX0=
+eyJoaXN0b3J5IjpbNTYyMDY3Njg5LC0yMDQxODg1MDE0LDc1Mz
+IzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODAsLTE1MzI3MDA0
+NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3LDE1NDEzNTQ3NDQsLT
+IzODUxNTkwNSwtMTgxNDQ3NTM5NSw1Mjc2ODAxMjIsLTE3MTMw
+Mzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3MDQ2MSwtNTc2MTQ3NT
+gzLDY3NjQ1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2NTg1LC0y
+MDcwNzQyNDddfQ==
 -->
