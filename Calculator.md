@@ -356,18 +356,22 @@ This isnt any faster. Duh - we are still calling .get(name) inside yolo(), but t
 
 One thing to note, is that the code has two line. One line use only loc, and one line use env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user. If we have an Expr, which will be ran multiple time, we can execute `int idx = loc.get(name);` only once, store the result, and only execute `return env[idx];` everytime we run the Expr. This way, we will spend some time when we get the Expr, to precompute index, but then we will be very fast!
 
+    // In Expr
     abstract Function<int[], Integer> again(Map<String, Integer> loc);
 
 We can represent it by a Function returning a Function. The idea is, for the same Expr, we will call again once, but we can call the result multiple time, each time representing a run of the program.
 
+    // In Lit
     Function<int[], Integer> again(Map<String, Integer> loc) {return env -> val;}
 
+The case for Lit is simple. We return a Function, which take env and ignore it. It is just like the old yolo() function.
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzODA1Nzc0NSwtMTg2NjI5MDc2NiwtND
-k4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0xMjMzMzY5
-NDA5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OCwtMT
-M5MTM4NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMTUxMzM3
-NTU0LDE2NzY4ODMzMTEsLTEzMjU4NjAzODcsLTIwMTI2NjE5MT
-QsNzc2MjU1NDgyLC00Nzc3MDEyMDYsLTEwOTY5ODIyNzUsNzI2
-MTEwODM2XX0=
+eyJoaXN0b3J5IjpbNjc2NDUzNzM0LC0xODY2MjkwNzY2LC00OT
+gyNTY1ODUsLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEyMzMzNjk0
+MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4LC0xMz
+kxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LDExNTEzMzc1
+NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMjAxMjY2MTkxNC
+w3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4MjI3NSw3MjYx
+MTA4MzZdfQ==
 -->
