@@ -265,13 +265,13 @@ The case for Lit and Var is trivial: there is nothing to simplify, so we just {r
 
 By correctness, we mean that, given a program X, X.simp() is equal to X. By equality, X and Y are equal, if and only if forall env, X.eval(env) == Y.eval(env). When writing optimizations, this is critical to keep in mind - we dont want to change the meaning of user program!
 
-Let's get back to coding. 
+Let's get back to programming. For Plus, if left or right is 0, we just return the other Expr.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMD
-IwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQwODg3
-LDE5NDUwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMT
-A0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1NTk4
-ODY3MSwtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbNzI2MTEwODM2LDE3NTY2MzcyMjksLTY5OD
+M4ODUyLDMyMjAyMDczMiwtMTEzNTM3NTQ3OSw4NDA3NDkzMTcs
+LTQ1MzM0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5NSwtMjA1Mz
+A5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1
+MjQ0OCw1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
 -->
