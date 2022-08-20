@@ -397,13 +397,17 @@ What else is there to optimize? To understand this, we have to understand that c
 
 However, note that in our calculator language, there are no Object, and there are no dynamic dispatch. So, where are they from? We introduced them by calling the Function returned by again(). This is known as the interpretive overhead (A compiler can still have interpretive overhead, because an interpreter (in this case, JVM Function) might be used to interpret the compiled result.).
 
-To combat this, we can, instead of calling the returned value of again(), find a more efficient method to execute it. 
+To combat this, we can, instead of calling the returned value of again(), find a more efficient method to execute it. We start by using a class to store the return of again(), now renamed to located:
+
+    abstract static class LExpr {  
+      abstract int eval(int[] env);  }
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMT
-A5OTQyMTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3
-NTM5NSw1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMj
-ksMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2
-NjI5MDc2NiwtNDk4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwND
-ExLC0xMjMzMzY5NDA5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3
-OTg0OTg0OF19
+eyJoaXN0b3J5IjpbNDM2MTAxNzU2LC0xNTMyNzAwNDQ2LDE0OD
+IzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5
+MDUsLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEzMDM3NjQ0LC
+0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0NzU4Myw2NzY0
+NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0Mj
+Q3LDU0NDkyMDQxMSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LDY5
+NTg1MzE5Ml19
 -->
