@@ -437,16 +437,16 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 
 ## Challenge
 
- - 0: Introduce Minus, and Divide, and think about what simp() rule there are. Is `(a + b) - b -> a` a good rule? What about `(a / b) * b -> a` and `(a * b) / b -> a`? How about `a * 2 -> a + a`? Mult is more expensive so we want to do + instead, right?
  - 1: rewrite LExpr's compile to generate python code instead of java code. When you do that, of the three language (Calculator, Java, Python), which are the Meta-Language, and which are the Object-Language?
- - 2: look at the example code that generate 
+- 0: Introduce Minus, and Divide, and think about what simp() rule there are. Is `(a + b) - b -> a` a good rule? What about `(a / b) * b -> a` and `(a * b) / b -> a`? How about `a * 2 -> a + a`? Mult is more expensive so we want to do + instead, right?
+ -  2: look at the code that generate the Expr that represent sum of result matrix multiplication. Try to understand it, and modify it so it return the determinant of resulting matrix multiplication
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzA2NDUyODEzLDc1MzIzMTkwNiw2MTAyMj
-Q2NTcsLTE4MjU5NzI3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYx
-NSwtMTA5OTQyMTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMT
-gxNDQ3NTM5NSw1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5
-MDcwMjksMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNC
-wtMTg2NjI5MDc2NiwtNDk4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0
-OTIwNDExXX0=
+eyJoaXN0b3J5IjpbLTEyMTMxODEzMzksNzUzMjMxOTA2LDYxMD
+IyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0
+NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NCwtMjM4NTE1OTA1LC
+0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcxMzAzNzY0NCwtMTk1
+MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxNDc1ODMsNjc2NDUzNz
+M0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1
+NDQ5MjA0MTFdfQ==
 -->
