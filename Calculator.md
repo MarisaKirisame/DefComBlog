@@ -175,7 +175,7 @@ Now our example look much better - it is just a one-liner.  After the above refa
       }  
     }
 
-We have to now fix the definition for prettyPrint() and evaluate(). While we are at it, let's also rename prettyPrint() into pp(), and evaluate() into eval(): our code is, and will, remain short and concise.
+We have to now fix the definition for prettyPrint() and evaluate(). While we are at it, let's also rename prettyPrint() into toString(), and evaluate() into eval(): our code is, and will, remain short and concise.
 
 One problem with the above code, is that it rely heavily on instanceof, and downcasting, which is frown upon in Java. This could be fixed by making pp() and eval() abstract function in Expr, and have each subclass override it.
 
@@ -276,10 +276,10 @@ Now calling example.simp().pp() will give a string of length 126, as opposed to 
 
 If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit! And the code that will be executed, in that case, is exactly the code for a Definitional Interpreter. This is not a coincidence: the Definitional Interpreter is a recurring echo, which we will see multi, multiple of time in the book.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzc2MjU1NDgyLC00Nzc3MDEyMDYsLTEwOT
-Y5ODIyNzUsNzI2MTEwODM2LDE3NTY2MzcyMjksLTY5ODM4ODUy
-LDMyMjAyMDczMiwtMTEzNTM3NTQ3OSw4NDA3NDkzMTcsLTQ1Mz
-M0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2
-MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OC
-w1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
+eyJoaXN0b3J5IjpbLTIwMTI2NjE5MTQsNzc2MjU1NDgyLC00Nz
+c3MDEyMDYsLTEwOTY5ODIyNzUsNzI2MTEwODM2LDE3NTY2Mzcy
+MjksLTY5ODM4ODUyLDMyMjAyMDczMiwtMTEzNTM3NTQ3OSw4ND
+A3NDkzMTcsLTQ1MzM0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5
+NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMy
+wtMTUyNjk1MjQ0OCw1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
 -->
