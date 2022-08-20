@@ -437,10 +437,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 
 ## Challenge
 
- - 0: Introduce Minus, and Divide, and think about what simp() rule there are. Is `(a + b) - b -> a` a good rule? What about `(a / b) * b -> a` and `(a * b) / b -> a`?
+ - 0: Introduce Minus, and Divide, and think about what simp() rule there are. Is `(a + b) - b -> a` a good rule? What about `(a / b) * b -> a` and `(a * b) / b -> a`? How about `a * 2 -> a + a`? Mult is more expensive so we want to do + instead, right?
+ - 1: rewrite LExpr's compile to gene
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMDA1MjE1NTAsNzUzMjMxOTA2LDYxMD
+eyJoaXN0b3J5IjpbLTE1MzIwMTA5MjEsNzUzMjMxOTA2LDYxMD
 IyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0
 NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NCwtMjM4NTE1OTA1LC
 0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcxMzAzNzY0NCwtMTk1
