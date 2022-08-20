@@ -355,8 +355,10 @@ This isnt any faster. Duh - we are still calling .get(name) inside yolo(), but t
     return env[idx];  
 
 One thing to note, is that the code has two line. One line use only loc, and one line use env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjk1OTExMzc3LC00OTgyNTY1ODUsLTIwNz
+eyJoaXN0b3J5IjpbNTUzODkyOTA5LC00OTgyNTY1ODUsLTIwNz
 A3NDI0Nyw1NDQ5MjA0MTEsLTEyMzMzNjk0MDksMTgxMzA5MDkx
 Nyw2OTU4NTMxOTIsNTc5ODQ5ODQ4LC0xMzkxMzg0Nzg0LDE3OD
 U5MjkwMDcsODc0MzkzMzQ4LDExNTEzMzc1NTQsMTY3Njg4MzMx
