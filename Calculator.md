@@ -354,13 +354,13 @@ This isnt any faster. Duh - we are still calling .get(name) inside yolo(), but t
     int idx = loc.get(name);  
     return env[idx];  
 
-One thing to note, is that the code has two line. One line use only loc, and one line use env, alongside the value produced by loc.
+One thing to note, is that the code has two line. One line use only loc, and one line use env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0ND
-kyMDQxMSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5
-Miw1Nzk4NDk4NDgsLTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4Nz
-QzOTMzNDgsMTE1MTMzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYw
-Mzg3LC0yMDEyNjYxOTE0LDc3NjI1NTQ4MiwtNDc3NzAxMjA2LC
-0xMDk2OTgyMjc1LDcyNjExMDgzNiwxNzU2NjM3MjI5LC02OTgz
-ODg1Ml19
+eyJoaXN0b3J5IjpbNjk1OTExMzc3LC00OTgyNTY1ODUsLTIwNz
+A3NDI0Nyw1NDQ5MjA0MTEsLTEyMzMzNjk0MDksMTgxMzA5MDkx
+Nyw2OTU4NTMxOTIsNTc5ODQ5ODQ4LC0xMzkxMzg0Nzg0LDE3OD
+U5MjkwMDcsODc0MzkzMzQ4LDExNTEzMzc1NTQsMTY3Njg4MzMx
+MSwtMTMyNTg2MDM4NywtMjAxMjY2MTkxNCw3NzYyNTU0ODIsLT
+Q3NzcwMTIwNiwtMTA5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYz
+NzIyOV19
 -->
