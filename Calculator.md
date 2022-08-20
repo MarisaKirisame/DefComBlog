@@ -393,13 +393,13 @@ Some profiling show that our code is now about 4x faster, by removing the hash t
 
 ## Code Generation
 
-What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together. This mean accessing objects t
+What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This mean accessing objects take possibly a few order of magnitude slower then accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI4MDg1NjYwMywtMTgxNDQ3NTM5NSw1Mj
-c2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3
-MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MDc2Ni
-wtNDk4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0xMjMz
-MzY5NDA5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OC
-wtMTM5MTM4NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMTUx
-MzM3NTU0XX0=
+eyJoaXN0b3J5IjpbLTIwMDMyOTAwOTQsLTE4MTQ0NzUzOTUsNT
+I3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2
+NzA0NjEsLTU3NjE0NzU4Myw2NzY0NTM3MzQsLTE4NjYyOTA3Nj
+YsLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0NDkyMDQxMSwtMTIz
+MzM2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4ND
+gsLTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1
+MTMzNzU1NF19
 -->
