@@ -236,7 +236,7 @@ Alas, we cant write a compiler yet, as our language is so trivial a compiler is 
 
 Right now our language is really, really boring. It react the same (output a constant number) no matter what, while most program behave differently according to the context.
 
-The easiest way to do this is to add variable to the language. For now, all variables are defined externally, inputted by the user when the program is ran. We will add defining and assigning to variable some other times.
+The easiest way to do this is to add variable to the language. For now, for the sake of complexity, all variables are defined externally, inputted by the user when the program is ran. We will add defining and assigning to variable some other times.
 
     class Var extends Expr {  
       String name;  
@@ -255,9 +255,9 @@ OK. On to eval(). Hmm...
       throw new RuntimeException("...");  
     }
 
-What do I put in here? Seems like we are stuck! For a good reason: 
+What do I put in here? Seems like we are stuck! For a good reason: we now have 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MjQ4NDI4MiwtMjA1MzA5MzE2MiwtMT
-EwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5
-ODg2NzEsLTY2MTQ3MjIzOV19
+eyJoaXN0b3J5IjpbMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMT
+A0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1NTk4
+ODY3MSwtNjYxNDcyMjM5XX0=
 -->
