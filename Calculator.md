@@ -271,21 +271,16 @@ Let's get back to programming, and fill out the case for Plus.
     Expr right = this.right.simp();
     return mkPlus(left, right);
 
-We begin by traversing left and right, simplifying them. Note that the above code is universal - we can also do this for the simpl() for Mult (of course, we have to change mkPlus into mkMult). This is because if a == and b == y, mkPlus(a, b) == mkPlus(x, y). Even when we have nothing to do for a Node, we can and should still optimize by recursing. This way its children can do it's things. Now, onto the s
+We begin by traversing left and right, simplifying them. Note that the above code is universal - we can also do this for the simpl() for Mult (of course, we have to change mkPlus into mkMult). This is because if a == and b == y, mkPlus(a, b) == mkPlus(x, y). Even when we have nothing to do for a Node, we can and should still optimize by recursing. This way its children can do it's things. Now, onto some real optimization for Plus.
 
-If left or right is 0, we just return the other Expr.
-
-    Expr simp() {  
+      // After left, right is defined, before mkPlus
       if (left.equals(Cal.mkLit(0))) {  
         return right;  
       } else if (right.equals(Cal.mkLit(0))) {  
         return left;  
-      } else {  
-        return this;  
-      }  
-    }
+      }
 
-Note that I had override equals for all the Expr. I wont show them because they are not interesting, but you can see them in the code. Are we done? If we think about it, if left and right are both Lit, we can do our simplification by adding them up.
+If left or right is 0, we just return the other Expr. Note that I had override equals for all the Expr. I wont show them because they are not interesting, but you can see them in the code. Another caseLAre we done? If we think about it, if left and right are both Lit, we can do our simplification by adding them up.
 
     if (left instanceof Lit && right instanceof Lit) {  
       return mkLit(((Lit) left).val + ((Lit) right).val);  
@@ -293,10 +288,10 @@ Note that I had override equals for all the Expr. I wont show them because they 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NjE3MDg3NTAsLTEwOTY5ODIyNzUsNz
-I2MTEwODM2LDE3NTY2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDcz
-MiwtMTEzNTM3NTQ3OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOT
-Q1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUz
-NDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2Nz
-EsLTY2MTQ3MjIzOV19
+eyJoaXN0b3J5IjpbMTAxNDUwNjQ4MywtMTA5Njk4MjI3NSw3Mj
+YxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMy
+LC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5ND
+UwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0
+NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MS
+wtNjYxNDcyMjM5XX0=
 -->
