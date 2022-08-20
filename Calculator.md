@@ -221,12 +221,9 @@ One problem with the above code, is that it rely heavily on instanceof, and down
 The @override function  for Lit.
 
     String pp() {  
-      return "(" + left.pp() + "+" + right.pp() + ")";  
-    }  
+     return "(" + left.pp() + "+" + right.pp() + ")";}  
   
-    int eval() {  
-      return left.eval() + right.eval();  
-    }
+    int eval() {return left.eval() + right.eval();}
 
 The @override function for Plus. The case for Mult is almost the same, so I will not show it here.
 
@@ -240,19 +237,15 @@ The easiest way to do this is to add variable to the language. For now, for the 
 
     class Var extends Expr {  
       String name;  
-      Var(String name) {  
-        this.name = name;  
-      }  
+      Var(String name) {this.name = name;}  
     
-      String pp() {  
-        return name;  
-      }  
+      String pp() {return name;}  
     }
 
 OK. On to eval(). Hmm...
 
     int eval() {  
-      throw new RuntimeException("...");  
+      throw new RuntimeException("...");
     }
 
 What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we dont know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in a Mapping, environment(env) from variable to int. 
@@ -266,8 +259,8 @@ Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepti
 
 Now for Var, we lookup the value from the environment.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyMTIzMDIzMSwtNDUzMzQwODg3LDE5ND
-UwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0
-NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MS
-wtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbLTE1NjM1MDI1OTksLTQ1MzM0MDg4NywxOT
+Q1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUz
+NDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2Nz
+EsLTY2MTQ3MjIzOV19
 -->
