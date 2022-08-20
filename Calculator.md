@@ -286,11 +286,12 @@ If we look at our simp(), we will see that it is very much like eval()! In fact,
 
 ## Staging
 
-Ignore the scary title for now. 
+Ignore the scary title for now. Lets try to make our Interpreter faster.
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjEyNDQxNzQ1OCwtMTMyNTg2MDM4NywtMj
+eyJoaXN0b3J5IjpbMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMj
 AxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4
 MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMz
 IyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQw
