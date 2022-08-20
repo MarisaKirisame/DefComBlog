@@ -37,7 +37,6 @@ As an example, (1 + 2) * (3 + 4) is written as
 What a pain in the ass. Even though we don't have a parser, we can still write a pretty-printer: it output the code in a prettier, actually-human readable format.
 
 We will write it in Java, cause everyone know Java. I am gonna code it with you, step by step. This is like pair programming.
-
     
     static String prettyPrint(JSONObject json) {  
       throw new RuntimeException("...");  
@@ -56,27 +55,14 @@ We start by getting the 'type' field from the JSON, and see which case it is:
 
 Literal is easy - we just print the value: 
 
-    static String prettyPrint(JSONObject j) {  
-      String type = j.getString("type");
-      return switch (type) { 
         case "Literal" -> String.valueOf(j.getInt("value"));  
-        case "Plus" -> throw new RuntimeException("...");  
-        case "Multiply" -> throw new RuntimeException("...");  
-        default -> throw new RuntimeException("Unexpected: " + type);  
-    };  
 
 Unlike Literal, Plus and Multiply contain more JSON as children, in left and right field, which we have to handle by calling prettyPrint again - recursion! 
 
-    static String prettyPrint(JSONObject j) {  
-      String type = j.getString("type");
-      return switch (type) { 
-        case "Literal" -> String.valueOf(j.getInt("value"));  
         case "Plus" -> "(" + prettyPrint(j.getJSONObject("left")) +  
           "+" + prettyPrint(j.getJSONObject("right")) + ")";  
         case "Multiply" -> "(" + prettyPrint(j.getJSONObject("left")) +
           "*" + prettyPrint(j.getJSONObject("right")) + ")";  
-        default -> throw new RuntimeException("Unexpected: " + type);  
-    };  
 
 Now calling prettyPrint() on our example return "((1+2)*(3+4))". Look pretty neat.
 
@@ -100,23 +86,12 @@ Get the type and match on it...
 
 Handle the base case (no recursion, simple)...
 
-    static int evaluate(JSONObject j) {  
-      String type = j.getString("type");  
-      return switch (type) {  
         case "Literal" -> j.getInt("value");  
-        case "Plus" -> throw new RuntimeException("...");  
-        case "Multiply" -> throw new RuntimeException("...");  
-        default -> throw new RuntimeException("Unexpected value: " + type);  
-      };  
-    }
 
 Handle the recursive case (recurse into the children, and combine the result)...
 
         case "Plus" -> evaluate(j.getJSONObject("left")) + evaluate(j.getJSONObject("right"));  
         case "Multiply" -> evaluate(j.getJSONObject("left")) * evaluate(j.getJSONObject("right"));  
-        default -> throw new RuntimeException("Unexpected value: " + type);  
-      };  
-    }
 
 If you compare evaluate() to prettyPrint(), you will find that they are almost the same! The biggest difference is that one of them have + as an operator that add two Int, and one of them have + as "+" the string. 
 
@@ -286,7 +261,7 @@ If left or right is 0, we just return the other Expr. Note that I had override e
 If left and right are both Lit, we can do our simplification by adding them up.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MDQyOTU0MCwtMTA5Njk4MjI3NSw3Mj
+eyJoaXN0b3J5IjpbMTEwOTY5MDI2OCwtMTA5Njk4MjI3NSw3Mj
 YxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMy
 LC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5ND
 UwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0
