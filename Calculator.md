@@ -349,10 +349,10 @@ Now, a function to turn the old Env into the new Env. Now we can profile our cod
       }  
     }
 
-This isnt any faster. Duh - we are still calling 
+This isnt any faster. Duh - we are still calling .get(name) inside yolo(), but the point is to not call it!
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY5NDQ4NzczNSw1NDQ5MjA0MTEsLTEyMz
+eyJoaXN0b3J5IjpbLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEyMz
 MzNjk0MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4
 LC0xMzkxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LDExNT
 EzMzc1NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMjAxMjY2
