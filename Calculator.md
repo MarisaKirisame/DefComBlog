@@ -432,13 +432,13 @@ Isnt this just the code for eval(), our definitional interpreter, only you put i
 If you want a 1-day intro to compiler, this is it. Stop reading.
 This chapter is a microcosm of the whole book: It contain programming language design, evaluation, performance debugging by profiling and reasoning about hardware, optimization, staging, and finally code generation, with all of them interacting with the definitional interpreter. The rest of the book is an extension of all we seen before, only in more depth.
 
-
+After all, a compiler isn't a menacing dragon, to be conquered by knight, but a dragon-friend, whom once you befriend with, will be amazed by its beauty.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MzgwNDQ0ODEsNzUzMjMxOTA2LDYxMD
-IyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0
-NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NCwtMjM4NTE1OTA1LC
-0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcxMzAzNzY0NCwtMTk1
-MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxNDc1ODMsNjc2NDUzNz
-M0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1
-NDQ5MjA0MTFdfQ==
+eyJoaXN0b3J5IjpbLTIwOTkwNzExMSw3NTMyMzE5MDYsNjEwMj
+I0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2
+MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLT
+E4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOTUx
+OTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0NzU4Myw2NzY0NTM3Mz
+QsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0
+NDkyMDQxMV19
 -->
