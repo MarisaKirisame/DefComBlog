@@ -238,8 +238,18 @@ Right now our language is really, really boring. It react the same (output a con
 
 The easiest way to do this is to add variable to the language. For now, all variables are defined externally, inputted by the user when the program is ran. We will add defining and assigning to variable some other times.
 
+    class Var extends Expr {  
+      String name;  
+      Var(String name) {  
+        this.name = name;  
+      }  
+    
+      String pp() {  
+        return name;  
+      }  
+    }
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNT
-U1OTg4NjcxLC02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLT
+E1MjY5NTI0NDgsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
 -->
