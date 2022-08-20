@@ -299,15 +299,22 @@ However, inorder to lookup a key, they all need to traverse the String to compar
 We will call our new function yolo, because you only look once (into the array).
 The change for Lit, Plus, Mult are all mechanical and not be shown, but we are stuck on Input again: we dont have a way to go from String name, to an index in env! We can fix this, by adding a mapping from String to index as an argument to yolo:
 
+    // In Expr
     abstract int yolo(Map<String, Integer> loc, int[] env);
+    // In Var
+    int yolo(Map<String, Integer> loc, int[] env) {  
+      int idx = loc.get(name);  
+      return env[idx];  
+    }
 
 
+abstract void locate(Map<String, Integer> loc);
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzMzNjk0MDksMTgxMzA5MDkxNyw2OT
-U4NTMxOTIsNTc5ODQ5ODQ4LC0xMzkxMzg0Nzg0LDE3ODU5Mjkw
-MDcsODc0MzkzMzQ4LDExNTEzMzc1NTQsMTY3Njg4MzMxMSwtMT
-MyNTg2MDM4NywtMjAxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3Nzcw
-MTIwNiwtMTA5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOS
-wtNjk4Mzg4NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0
-OTMxN119
+eyJoaXN0b3J5IjpbMTkwMzE0ODcwNSwtMTIzMzM2OTQwOSwxOD
+EzMDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgsLTEzOTEzODQ3
+ODQsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MTMzNzU1NCwxNj
+c2ODgzMzExLC0xMzI1ODYwMzg3LC0yMDEyNjYxOTE0LDc3NjI1
+NTQ4MiwtNDc3NzAxMjA2LC0xMDk2OTgyMjc1LDcyNjExMDgzNi
+wxNzU2NjM3MjI5LC02OTgzODg1MiwzMjIwMjA3MzIsLTExMzUz
+NzU0NzldfQ==
 -->
