@@ -336,23 +336,22 @@ The other cases are uninteresting.
       return arr;  
     }
 
-Now, a function to turn the old Env into the new Env. Now we can reprofile our code:
+Now, a function to turn the old Env into the new Env. Now we can profile our code again:
 
-      
-public static void profileYolo(int n, int length) {  
-  Expr example = getExample(n);  
-  Map<String, Integer> env = getExampleEnv(n);  
-  Map<String, Integer> loc = new HashMap<>();  
-  example.locate(loc);  
- int[] locEnv = envToLocEnv(env, loc)  
-  for (int i = 0; i < length; ++i) {  
-    example.yolo(loc, locEnv);  
-  }  
-}
+    public static void profileYolo(int n, int length) {  
+      Expr example = getExample(n);  
+      Map<String, Integer> env = getExampleEnv(n);  
+      Map<String, Integer> loc = new HashMap<>();  
+      example.locate(loc);  
+      int[] locEnv = envToLocEnv(env, loc)  
+      for (int i = 0; i < length; ++i) {  
+        example.yolo(loc, locEnv);  
+      }  
+    }
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODcyOTk4ODksNTQ0OTIwNDExLC0xMj
+eyJoaXN0b3J5IjpbLTE1Mjg5NjUyOTQsNTQ0OTIwNDExLC0xMj
 MzMzY5NDA5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0
 OCwtMTM5MTM4NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMT
 UxMzM3NTU0LDE2NzY4ODMzMTEsLTEzMjU4NjAzODcsLTIwMTI2
