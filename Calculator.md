@@ -366,6 +366,11 @@ We can represent it by a Function returning a Function. The idea is, for the sam
 
 The case for Lit is simple. We return a Function, which take env and ignore it. It is just like the old yolo() function.
 
+    Function<int[], Integer> again(Map<String, Integer> loc) {  
+    Function<int[], Integer> left = this.left.again(loc);  
+    Function<int[], Integer> right = this.right.again(loc);  
+      return env -> left.apply(env) + right.apply(env);  
+   }
     // In Var
     Function<int[], Integer> again(Map<String, Integer> loc) {  
       int idx = loc.get(name);  
@@ -374,11 +379,11 @@ The case for Lit is simple. We return a Function, which take env and ignore it. 
 
 The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU3NjE0NzU4Myw2NzY0NTM3MzQsLTE4Nj
-YyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0NDkyMDQx
-MSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nz
-k4NDk4NDgsLTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4NzQzOTMz
-NDgsMTE1MTMzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYwMzg3LC
-0yMDEyNjYxOTE0LDc3NjI1NTQ4MiwtNDc3NzAxMjA2LC0xMDk2
-OTgyMjc1XX0=
+eyJoaXN0b3J5IjpbLTEzNTUzMjAwMDEsLTU3NjE0NzU4Myw2Nz
+Y0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0
+MjQ3LDU0NDkyMDQxMSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LD
+Y5NTg1MzE5Miw1Nzk4NDk4NDgsLTEzOTEzODQ3ODQsMTc4NTky
+OTAwNyw4NzQzOTMzNDgsMTE1MTMzNzU1NCwxNjc2ODgzMzExLC
+0xMzI1ODYwMzg3LC0yMDEyNjYxOTE0LDc3NjI1NTQ4MiwtNDc3
+NzAxMjA2XX0=
 -->
