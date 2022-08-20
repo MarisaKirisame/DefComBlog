@@ -396,12 +396,13 @@ Some profiling show that our code is now about 4x faster, by removing the hash t
 What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This mean accessing objects take possibly a few order of magnitude slower then accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects into an array will not help because they are boxed). Furthermore, calling an nonstatic method will do dynamic dispatch, which require jumping to an unknown place in the code, which will induce pipeline stall which is also very expensive.
 
 However, note that in our calculator language, there are no Object, and there are no dynamic dispatch. So, where are they from? We introduced them by calling the Function returned by again(). This is known as the interpretive overhead (A compiler can still have interpretive overhead, because an interpreter (in this case, JVM Function) might be used to interpret the compiled result.).
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwMTYyMTM4MzEsLTEwOTk0MjE1NywxNT
-QxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3Njgw
-MTIyLC0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0Nj
-EsLTU3NjE0NzU4Myw2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5
-ODI1NjU4NSwtMjA3MDc0MjQ3LDU0NDkyMDQxMSwtMTIzMzM2OT
-QwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgsLTEz
-OTEzODQ3ODRdfQ==
+eyJoaXN0b3J5IjpbMTQ4MjM0NDYxNSwtMTA5OTQyMTU3LDE1ND
+EzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NSw1Mjc2ODAx
+MjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3MDQ2MS
+wtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MDc2NiwtNDk4
+MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0xMjMzMzY5ND
+A5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OCwtMTM5
+MTM4NDc4NF19
 -->
