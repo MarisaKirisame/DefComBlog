@@ -255,9 +255,9 @@ OK. On to eval(). Hmm...
       throw new RuntimeException("...");  
     }
 
-What do I put in here?
+What do I put in here? Seems like we are stuck! For a good reason: 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTMwOTMxNjIsLTExMDQ1MzQ2OTMsLT
-E4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC02NjE0
-NzIyMzldfQ==
+eyJoaXN0b3J5IjpbLTE4MjQ4NDI4MiwtMjA1MzA5MzE2MiwtMT
+EwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5
+ODg2NzEsLTY2MTQ3MjIzOV19
 -->
