@@ -393,15 +393,15 @@ Some profiling show that our code is now about 4x faster, by removing the hash t
 
 ## Code Generation
 
-What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This mean accessing objects take possibly a few order of magnitude slower then accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects into an array will not help because they are boxed). Furthermore, calling an nonstatic method require jumping to an unknown place in the code, which will induce pipeline stall which is also very expensive.
+What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This mean accessing objects take possibly a few order of magnitude slower then accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects into an array will not help because they are boxed). Furthermore, calling an nonstatic method will do dynamic dispatch, which require jumping to an unknown place in the code, which will induce pipeline stall which is also very expensive.
 
-However, note that 
+However, note that in our calculator language, there are no Object, and there are no dynamic dispatch. So, where are they from?
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTcyNTc3NDAyOSwxNTQxMzU0NzQ0LC0yMz
-g1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEzMDM3
-NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0NzU4My
-w2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3
-MDc0MjQ3LDU0NDkyMDQxMSwtMTIzMzM2OTQwOSwxODEzMDkwOT
-E3LDY5NTg1MzE5Miw1Nzk4NDk4NDgsLTEzOTEzODQ3ODQsMTc4
-NTkyOTAwN119
+eyJoaXN0b3J5IjpbODgyMDQ0NTQwLDE1NDEzNTQ3NDQsLTIzOD
+UxNTkwNSwtMTgxNDQ3NTM5NSw1Mjc2ODAxMjIsLTE3MTMwMzc2
+NDQsLTE5NTE5MDcwMjksMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLD
+Y3NjQ1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2NTg1LC0yMDcw
+NzQyNDcsNTQ0OTIwNDExLC0xMjMzMzY5NDA5LDE4MTMwOTA5MT
+csNjk1ODUzMTkyLDU3OTg0OTg0OCwtMTM5MTM4NDc4NCwxNzg1
+OTI5MDA3XX0=
 -->
