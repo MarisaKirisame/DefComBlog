@@ -4,6 +4,8 @@
 
 Dont worry about the above quote. Let's design a programming language, and write a compiler for it!
 
+## Design
+
 What should the language look like? 
 
 JSON. To be precise, the source code of the program is a JSON file. By doing so, we do not need to parse the program from a textual format - it was already done. Even though parsing make your program look nice (because it is not in JSON), and parsing is deep and useful knowledge, we will completely skip parsing: it is very complex, and if we talk about it, we will spend most of our time talking about it, leaving little time for everything else. 
@@ -276,11 +278,11 @@ Now calling example.simp().pp() will give a string of length 126, as opposed to 
 
 If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit! And the code that will be executed, in that case, is exactly the code for a Definitional Interpreter. This is not a coincidence: the Definitional Interpreter is a recurring echo, which we will see multi, multiple of time in the book.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc5OTk0MTcwMCwtMjAxMjY2MTkxNCw3Nz
-YyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4MjI3NSw3MjYxMTA4
-MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMyLC0xMT
-M1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5NDUwNDMz
-ODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC
-0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MSwtNjYx
-NDcyMjM5XX0=
+eyJoaXN0b3J5IjpbLTE2MDc1MzU1OTQsLTIwMTI2NjE5MTQsNz
+c2MjU1NDgyLC00Nzc3MDEyMDYsLTEwOTY5ODIyNzUsNzI2MTEw
+ODM2LDE3NTY2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDczMiwtMT
+EzNTM3NTQ3OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOTQ1MDQz
+Mzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5My
+wtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2NzEsLTY2
+MTQ3MjIzOV19
 -->
