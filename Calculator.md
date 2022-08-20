@@ -288,6 +288,13 @@ If we look at our simp(), we will see that it is very much like eval()! In fact,
 
 Ignore the scary title for now. Lets try to make our Interpreter faster. I had increase n from 2 to 4, so we are now multiplying 2 4*4 matrix, and run the eval() in a loop, and profiled the resulting code.
 
+    public static void profileEval(int n, int length) {  
+      Expr example = getExample(n);  
+      Map<String, Integer> env = getExampleEnv(n);  
+      for (int i = 0; i < length; ++i) {  
+        example.eval(env);  
+      }  
+    }
 
 The profiler tell me that most time is spend in Map.get(). Why? What is in a Map?
 
@@ -329,13 +336,27 @@ The other cases are uninteresting.
       return arr;  
     }
 
-Now, a function to turn the old Env into the new Env.
+Now, a function to turn the old Env into the new Env. Now we can reprofile our code:
+
+      
+public static void profileYolo(int n, int length) {  
+  Expr example = getExample(n);  
+  Map<String, Integer> env = getExampleEnv(n);  
+  Map<String, Integer> loc = new HashMap<>();  
+  example.locate(loc);  
+ int[] locEnv = envToLocEnv(env, loc)  
+  for (int i = 0; i < length; ++i) {  
+    example.yolo(loc, locEnv);  
+  }  
+}
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM2NjcwMjgxNCw1NDQ5MjA0MTEsLTEyMz
-MzNjk0MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4
-LC0xMzkxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LDExNT
-EzMzc1NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMjAxMjY2
-MTkxNCw3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4MjI3NS
-w3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIw
-NzMyXX0=
+eyJoaXN0b3J5IjpbLTE0ODcyOTk4ODksNTQ0OTIwNDExLC0xMj
+MzMzY5NDA5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0
+OCwtMTM5MTM4NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMT
+UxMzM3NTU0LDE2NzY4ODMzMTEsLTEzMjU4NjAzODcsLTIwMTI2
+NjE5MTQsNzc2MjU1NDgyLC00Nzc3MDEyMDYsLTEwOTY5ODIyNz
+UsNzI2MTEwODM2LDE3NTY2MzcyMjksLTY5ODM4ODUyLDMyMjAy
+MDczMl19
 -->
