@@ -391,13 +391,15 @@ Wait, compile time? We separate our interpreter into two stage, run one stage on
 
 Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer HashMap or any particular Java library call, but time is instead spent during all the recursive call.
 
+## Code Generation
 
+What else is there to optimize? To understand this, 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDY0NjE3MTk3LC0xODE0NDc1Mzk1LDUyNz
-Y4MDEyMiwtMTcxMzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4Njcw
-NDYxLC01NzYxNDc1ODMsNjc2NDUzNzM0LC0xODY2MjkwNzY2LC
-00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEyMzMz
-Njk0MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4LC
-0xMzkxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LDExNTEz
-Mzc1NTRdfQ==
+eyJoaXN0b3J5IjpbLTQ2MTk0MzExNywtMTgxNDQ3NTM5NSw1Mj
+c2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3
+MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MDc2Ni
+wtNDk4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0xMjMz
+MzY5NDA5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OC
+wtMTM5MTM4NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMTUx
+MzM3NTU0XX0=
 -->
