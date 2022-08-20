@@ -271,7 +271,7 @@ Let's get back to programming, and fill out the case for Plus.
     Expr right = this.right.simp();
     return mkPlus(left, right);
 
-We begin by traversing left and right, simplifying them. Note that the above code is universal - we can also do this for the simpl() for Mult (of course, we have to change mkPlus into mkMult). This is because if a == x and b == y, mkPlus(a, b) == mkPlus(x, y).
+We begin by traversing left and right, simplifying them. Note that the above code is universal - we can also do this for the simpl() for Mult (of course, we have to change mkPlus into mkMult). This is because if a == and b == y, mkPlus(a, b) == mkPlus(x, y). Even when we have nothing to do for a Node, we can and should still optimize by recursing. This way its children can do it's things. Now, onto the s
 
 If left or right is 0, we just return the other Expr.
 
@@ -293,10 +293,10 @@ Note that I had override equals for all the Expr. I wont show them because they 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjYyMjU3Mjg4LC0xMDk2OTgyMjc1LDcyNj
-ExMDgzNiwxNzU2NjM3MjI5LC02OTgzODg1MiwzMjIwMjA3MzIs
-LTExMzUzNzU0NzksODQwNzQ5MzE3LC00NTMzNDA4ODcsMTk0NT
-A0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMxNjIsLTExMDQ1MzQ2
-OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC
-02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbLTE4NjE3MDg3NTAsLTEwOTY5ODIyNzUsNz
+I2MTEwODM2LDE3NTY2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDcz
+MiwtMTEzNTM3NTQ3OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOT
+Q1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUz
+NDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2Nz
+EsLTY2MTQ3MjIzOV19
 -->
