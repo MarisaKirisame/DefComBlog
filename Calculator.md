@@ -249,7 +249,15 @@ The easiest way to do this is to add variable to the language. For now, all vari
       }  
     }
 
+OK. On to eval(). Hmm...
+
+    int eval() {  
+      throw new RuntimeException("...");  
+    }
+
+What do I put in here?
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLT
-E1MjY5NTI0NDgsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbLTIwNTMwOTMxNjIsLTExMDQ1MzQ2OTMsLT
+E4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC02NjE0
+NzIyMzldfQ==
 -->
