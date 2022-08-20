@@ -236,8 +236,10 @@ Alas, we cant write a compiler yet, as our language is so trivial a compiler is 
 
 Right now our language is really, really boring. It react the same (output a constant number) no matter what, while most program behave differently according to the context.
 
-The easiest way to do this is to add variable to the language. For now 
+The easiest way to do this is to add variable to the language. For now, all variables are defined externally, inputted by the user when the program is ran. We will add defining and assigning to variable some other times.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC02Nj
-E0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbLTE4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNT
+U1OTg4NjcxLC02NjE0NzIyMzldfQ==
 -->
