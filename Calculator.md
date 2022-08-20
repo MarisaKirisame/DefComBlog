@@ -297,9 +297,13 @@ However, inorder to lookup a key, they all need to traverse the String to compar
     abstract int yolo(int[] env);
 
 We will call our new function yolo, because you only look once (into the array).
-The change for Lit, Plus, Mult are all mecahnical
+The change for Lit, Plus, Mult are all mechanical and not be shown, but we are stuck on Input again: we dont have a way to go from String name, to an index in env! We can fix this, by adding a mapping from String to index as an argument to yolo:
+
+    abstract int yolo(Map<String, Integer> loc, int[] env);
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0OTgyODkzMDksMTgxMzA5MDkxNyw2OT
+eyJoaXN0b3J5IjpbLTEyMzMzNjk0MDksMTgxMzA5MDkxNyw2OT
 U4NTMxOTIsNTc5ODQ5ODQ4LC0xMzkxMzg0Nzg0LDE3ODU5Mjkw
 MDcsODc0MzkzMzQ4LDExNTEzMzc1NTQsMTY3Njg4MzMxMSwtMT
 MyNTg2MDM4NywtMjAxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3Nzcw
