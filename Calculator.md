@@ -229,7 +229,7 @@ Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepti
 
 Now for Var, we lookup the value from the environment.
 
-Pretty Good! I had wrote another example, which multiply 2 2*2 matrix, and add up all the cell in the resulting matrix, into a single number. Running the example on 2 matrix with all cell as 1, will give 8, which is expected. However, printing the matrix will give:
+Pretty Good! I had wrote another example, which multiply 2 n*n matrix, where n = 2, and add up all the cell in the resulting matrix, into a single number. Running the example on 2 matrix with all cell as 1, will give 8, which is expected. However, printing the matrix will give:
 
     ((((0+((0+(a_0_0*b_0_0))+(a_0_1*b_1_0)))+((0+(a_0_0*b_0_1))+(a_0_1*b_1 ...
 
@@ -286,16 +286,16 @@ If we look at our simp(), we will see that it is very much like eval()! In fact,
 
 ## Staging
 
-Ignore the scary title for now. Lets try to make our Interpreter faster.
+Ignore the scary title for now. Lets try to make our Interpreter faster. I had increase n from 2 to 4, so we are now multiplying 2 4*4 matrix, and run the eval() in a hot loop,
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMj
-AxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4
-MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMz
-IyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQw
-ODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC
-0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1
-NTk4ODY3MV19
+eyJoaXN0b3J5IjpbLTExMTk1MDI5NTAsMTY3Njg4MzMxMSwtMT
+MyNTg2MDM4NywtMjAxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3Nzcw
+MTIwNiwtMTA5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOS
+wtNjk4Mzg4NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0
+OTMxNywtNDUzMzQwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1LC
+0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC0x
+NTI2OTUyNDQ4XX0=
 -->
