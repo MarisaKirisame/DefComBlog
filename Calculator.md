@@ -389,15 +389,15 @@ The case for Var. The lambda perfectly separate the two world - a world where we
 
 Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
 
-Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime.
+Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNz
-EzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0
-NzU4Myw2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NS
-wtMjA3MDc0MjQ3LDU0NDkyMDQxMSwtMTIzMzM2OTQwOSwxODEz
-MDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgsLTEzOTEzODQ3OD
-QsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MTMzNzU1NCwxNjc2
-ODgzMzExXX0=
+eyJoaXN0b3J5IjpbMTExOTg4MTQwNSwtMTgxNDQ3NTM5NSw1Mj
+c2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3
+MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MDc2Ni
+wtNDk4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0xMjMz
+MzY5NDA5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OC
+wtMTM5MTM4NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMTUx
+MzM3NTU0XX0=
 -->
