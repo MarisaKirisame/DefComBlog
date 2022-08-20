@@ -260,10 +260,10 @@ What do I put in here? Seems like we are stuck! For a good reason: we now have u
     // In Expr
     abstract int eval(Map<String, Integer> env);
 
-
+Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepting the env 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTI3MTk4MDk5MSwxOTQ1MDQzMzg3LDMzND
-czNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5
-MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2NzEsLTY2MTQ3MjIzOV
-19
+eyJoaXN0b3J5IjpbLTI3MDIyMDAwLDE5NDUwNDMzODcsMzM0Nz
+M2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkw
+MTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX
+0=
 -->
