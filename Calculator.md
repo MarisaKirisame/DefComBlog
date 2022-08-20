@@ -259,12 +259,12 @@ Pretty Good! I had wrote another example, which multiply 2 2*2 matrix, and add u
 Urgh. What a mess! Look like there is a bunch of 0 in our program. We can write a function, simp(), just like pp() and eval(), to simplify the input program and remove them.
 
     // In Expr
-    abstract Expr simp();
+    Expr simp() {return this;}
     
-The case for Lit and Var is trivial: there is nothing to simplify, so we just {return this;}.
+The case for Lit and Var is trivial: there is nothing to simplify, so we just {return this;}. In 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjAxMTAzNjMwNiw4NDA3NDkzMTcsLTQ1Mz
-M0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2
-MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OC
-w1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
+eyJoaXN0b3J5IjpbLTE0ODI3NzIwNTMsODQwNzQ5MzE3LC00NT
+MzNDA4ODcsMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMx
+NjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0ND
+gsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
 -->
