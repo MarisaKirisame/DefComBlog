@@ -255,15 +255,17 @@ OK. On to eval(). Hmm...
       throw new RuntimeException("...");  
     }
 
-What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we dont know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in a Mapping, from variable to int. 
+What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we dont know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in a Mapping, environment(env) from variable to int. 
 
     // In Expr
     abstract int eval(Map<String, Integer> env);
 
-Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepting the env 
+Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepting the env and doing nothing for it. For Plus and Mult, we pass env into the recursive call. 
+
+Now for Var, we look
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTI3MDIyMDAwLDE5NDUwNDMzODcsMzM0Nz
-M2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkw
-MTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX
-0=
+eyJoaXN0b3J5IjpbLTE4NTE4MzQwODIsMTk0NTA0MzM4NywzMz
+Q3MzY1OTUsLTIwNTMwOTMxNjIsLTExMDQ1MzQ2OTMsLTE4ODQ5
+OTAxMzMsLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC02NjE0NzIyMz
+ldfQ==
 -->
