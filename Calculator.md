@@ -134,14 +134,7 @@ Manipulating JSON is hard! I have to remember the name and the type of everythin
       }  
     }  
   
-    static class Mult extends Expr {  
-      Expr left, right;  
-  
-      Mult(Expr left, Expr right) {  
-        this.left = left;  
-        this.right = right;  
-      }  
-    }
+    static class Mult extends Expr { // ...
 
 The class definitions.
 
@@ -431,11 +424,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
  -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTYyMDY3Njg5LC0yMDQxODg1MDE0LDc1Mz
-IzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODAsLTE1MzI3MDA0
-NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3LDE1NDEzNTQ3NDQsLT
-IzODUxNTkwNSwtMTgxNDQ3NTM5NSw1Mjc2ODAxMjIsLTE3MTMw
-Mzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3MDQ2MSwtNTc2MTQ3NT
-gzLDY3NjQ1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2NTg1LC0y
-MDcwNzQyNDddfQ==
+eyJoaXN0b3J5IjpbLTE1NDU4NzA5MzcsLTIwNDE4ODUwMTQsNz
+UzMjMxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcw
+MDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NC
+wtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcx
+MzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxND
+c1ODMsNjc2NDUzNzM0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUs
+LTIwNzA3NDI0N119
 -->
