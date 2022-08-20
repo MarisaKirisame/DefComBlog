@@ -262,13 +262,17 @@ If left and right are both Lit, we can do our simplification by adding them up.
 
 The case for Mult is very similar:
 
- - 0:
+ - 0: Recurse on the children
+ - 1: If both expr is Lit, multiply the val and return a Lit
+ - 2: If any expr is 0, return 0
+ - 3: If any expr is 1, return the other expr
+ - 4: otherwise return a Lit containing both children
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTc5OTExODI5OCwtMTA5Njk4MjI3NSw3Mj
-YxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMy
-LC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5ND
-UwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0
-NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MS
-wtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbLTIwODAzMDIyMjQsLTEwOTY5ODIyNzUsNz
+I2MTEwODM2LDE3NTY2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDcz
+MiwtMTEzNTM3NTQ3OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOT
+Q1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUz
+NDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2Nz
+EsLTY2MTQ3MjIzOV19
 -->
