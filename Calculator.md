@@ -262,9 +262,11 @@ Urgh. What a mess! Look like there is a bunch of 0 in our program. We can write 
     Expr simp() {return this;}
     
 The case for Lit and Var is trivial: there is nothing to simplify, so we just {return this;}. In fact, we had moved this code into the base class, Expr, because it is always correct to simplify, by doing nothing!
+
+By correctness, we mean that, given a program X, X.simp() is equal to X. By equality, X and Y are equal, if forall env, X.eval(env) == Y.eval(env).
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMzUzNzU0NzksODQwNzQ5MzE3LC00NT
-MzNDA4ODcsMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMx
-NjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0ND
-gsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MD
+c0OTMxNywtNDUzMzQwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1
+LC0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC
+0xNTI2OTUyNDQ4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX0=
 -->
