@@ -268,12 +268,15 @@ The case for Mult is very similar:
  - 3: If any expr is 1, return the other expr
  - 4: otherwise return mkMult(left, right)
 
-Now calling example.simp().pp
+Now calling example.simp().pp() will give a string of length 126, as opposed to length 146, and we can see, with our eyes, that it is a bit prettier:
+
+    (((((a_0_0*b_0_0)+(a_0_1*b_1_0))+((a_0_0*b_0_1)+(a_0_1*b_1_1)))+((a_1_
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NDYyNDU0MjIsLTQ3NzcwMTIwNiwtMT
-A5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4
-NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtND
-UzMzQwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkz
-MTYyLC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyND
-Q4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbOTExNDg3NTIwLC00Nzc3MDEyMDYsLTEwOT
+Y5ODIyNzUsNzI2MTEwODM2LDE3NTY2MzcyMjksLTY5ODM4ODUy
+LDMyMjAyMDczMiwtMTEzNTM3NTQ3OSw4NDA3NDkzMTcsLTQ1Mz
+M0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2
+MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OC
+w1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
 -->
