@@ -272,8 +272,11 @@ Now calling example.simp().pp() will give a string of length 126, as opposed to 
 
     (((((a_0_0*b_0_0)+(a_0_1*b_1_0))+((a_0_0*b_0_1)+(a_0_1*b_1_1)))+((a_1_ ...
 
+## Deja Vu
+
+If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNTY3MDYwMzAsLTQ3NzcwMTIwNiwtMT
+eyJoaXN0b3J5IjpbLTEyMzY0MTE2ODgsLTQ3NzcwMTIwNiwtMT
 A5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4
 NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtND
 UzMzQwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkz
