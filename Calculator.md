@@ -307,14 +307,16 @@ The change for Lit, Plus, Mult are all mechanical and not be shown, but we are s
       return env[idx];  
     }
 
-How do we turn the old Map<String, Integer> env, to a Map<String, Integer> loc and int[] env though? 
-abstract void locate(Map<String, Integer> loc);
+How do we turn the old Map<String, Integer> env, to a Map<String, Integer> loc and int[] env though? We can walk the whole Expr, and put every unique Var into a Map once. 
+
+    // In Expr
+    abstract void locate(Map<String, Integer> loc);
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTQ0OTIwNDExLC0xMjMzMzY5NDA5LDE4MT
-MwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OCwtMTM5MTM4NDc4
-NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMTUxMzM3NTU0LDE2Nz
-Y4ODMzMTEsLTEzMjU4NjAzODcsLTIwMTI2NjE5MTQsNzc2MjU1
-NDgyLC00Nzc3MDEyMDYsLTEwOTY5ODIyNzUsNzI2MTEwODM2LD
-E3NTY2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDczMiwtMTEzNTM3
-NTQ3OV19
+eyJoaXN0b3J5IjpbOTM5ODYzMjE4LDU0NDkyMDQxMSwtMTIzMz
+M2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgs
+LTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MT
+MzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYwMzg3LC0yMDEyNjYx
+OTE0LDc3NjI1NTQ4MiwtNDc3NzAxMjA2LC0xMDk2OTgyMjc1LD
+cyNjExMDgzNiwxNzU2NjM3MjI5LC02OTgzODg1MiwzMjIwMjA3
+MzJdfQ==
 -->
