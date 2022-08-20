@@ -252,10 +252,13 @@ Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepti
 
 Now for Var, we lookup the value from the environment.
 
-Pretty Good! I had wrote another example, which multiply 2 2*2 matrix, and add up all the cell in the resulting matrix, into a single number. 
+Pretty Good! I had wrote another example, which multiply 2 2*2 matrix, and add up all the cell in the resulting matrix, into a single number. Running the example on 2 matrix with all cell as 1, will give 8, which is expected. However, printing the matrix will give:
+
+    enter code here
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEwODg0ODA0MjgsODQwNzQ5MzE3LC00NT
-MzNDA4ODcsMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMx
-NjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0ND
-gsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbODgxMTI2MTcsODQwNzQ5MzE3LC00NTMzND
+A4ODcsMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMxNjIs
+LTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNT
+U1OTg4NjcxLC02NjE0NzIyMzldfQ==
 -->
