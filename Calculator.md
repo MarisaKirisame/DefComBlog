@@ -389,11 +389,11 @@ The case for Var. The lambda perfectly separate the two world - a world where we
 
 Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
 
-Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer HashMap or any particular Java library call, but time is instead spent do
+Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer HashMap or any particular Java library call, but time is instead spent during all the recursive call.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTQ5OTk5MDMxLC0xODE0NDc1Mzk1LDUyNz
+eyJoaXN0b3J5IjpbNDY0NjE3MTk3LC0xODE0NDc1Mzk1LDUyNz
 Y4MDEyMiwtMTcxMzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4Njcw
 NDYxLC01NzYxNDc1ODMsNjc2NDUzNzM0LC0xODY2MjkwNzY2LC
 00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEyMzMz
