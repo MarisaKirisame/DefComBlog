@@ -191,7 +191,7 @@ One problem with the above code, is that it rely heavily on instanceof, and down
     int eval() {return val;}
 
     // In Plus
-    public String toString() {return "(" + left.pp() + "+" + right.pp() + ")";}  
+    public String toString() {return "(" + left.toString() + "+" + right.toString() + ")";}  
   
     int eval() {return left.eval() + right.eval();}
 
@@ -284,11 +284,13 @@ Now calling example.simp().pp() will give a string of length 126, as opposed to 
 
 If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit! And the code that will be executed, in that case, is exactly the code for a Definitional Interpreter. This is not a coincidence: the Definitional Interpreter is a recurring echo, which we will see multi, multiple of time in the book.
 
-## ???
+## Staging
+
+Ignore the scary title for now. 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTYwODYyNTU1OCwtMTMyNTg2MDM4NywtMj
+eyJoaXN0b3J5IjpbMjEyNDQxNzQ1OCwtMTMyNTg2MDM4NywtMj
 AxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4
 MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMz
 IyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQw
