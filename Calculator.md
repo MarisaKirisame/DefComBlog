@@ -385,14 +385,14 @@ is not what we want: everytime the inside function is executed, we are calling a
       return env -> env[idx];  
     }
 
-The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). 
+The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3Nj
-Q1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2NTg1LC0yMDcwNzQy
-NDcsNTQ0OTIwNDExLC0xMjMzMzY5NDA5LDE4MTMwOTA5MTcsNj
-k1ODUzMTkyLDU3OTg0OTg0OCwtMTM5MTM4NDc4NCwxNzg1OTI5
-MDA3LDg3NDM5MzM0OCwxMTUxMzM3NTU0LDE2NzY4ODMzMTEsLT
-EzMjU4NjAzODcsLTIwMTI2NjE5MTQsNzc2MjU1NDgyLC00Nzc3
-MDEyMDZdfQ==
+eyJoaXN0b3J5IjpbLTE2MzU0MzAzMzksMTg4ODY3MDQ2MSwtNT
+c2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2
+NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0xMjMzMzY5NDA5LD
+E4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OCwtMTM5MTM4
+NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMTUxMzM3NTU0LD
+E2NzY4ODMzMTEsLTEzMjU4NjAzODcsLTIwMTI2NjE5MTQsNzc2
+MjU1NDgyXX0=
 -->
