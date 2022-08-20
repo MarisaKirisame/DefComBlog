@@ -366,12 +366,19 @@ We can represent it by a Function returning a Function. The idea is, for the sam
 
 The case for Lit is simple. We return a Function, which take env and ignore it. It is just like the old yolo() function.
 
+    // In Var
+    Function<int[], Integer> again(Map<String, Integer> loc) {  
+      int idx = loc.get(name);  
+      return env -> env[idx];  
+    }
+
+The case for Var. The lambda perfectly separate the two world - 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjc2NDUzNzM0LC0xODY2MjkwNzY2LC00OT
-gyNTY1ODUsLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEyMzMzNjk0
-MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4LC0xMz
-kxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LDExNTEzMzc1
-NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMjAxMjY2MTkxNC
-w3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4MjI3NSw3MjYx
-MTA4MzZdfQ==
+eyJoaXN0b3J5IjpbLTk1MzMzMjMzNCw2NzY0NTM3MzQsLTE4Nj
+YyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0NDkyMDQx
+MSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nz
+k4NDk4NDgsLTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4NzQzOTMz
+NDgsMTE1MTMzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYwMzg3LC
+0yMDEyNjYxOTE0LDc3NjI1NTQ4MiwtNDc3NzAxMjA2LC0xMDk2
+OTgyMjc1XX0=
 -->
