@@ -373,7 +373,11 @@ The case for Lit is simple. We return a Function, which take env and ignore it. 
       return env -> left.apply(env) + right.apply(env);  
     }
 
-Recurse, just as always. One important thing to notice in this code: the one-liner `return env -> left.again(loc).apply(env) + right.again(loc).apply(env);` is incorrect
+In Plus, we recurse, just as always. One important thing to notice in this code: the one-liner
+
+    return env -> left.again(loc).apply(env) + right.again(loc).apply(env);
+ 
+is not what we want: everytime the inside function is executed, we are calling again() again, but we only want to call again() once.
 
     // In Var
     Function<int[], Integer> again(Map<String, Integer> loc) {  
@@ -382,12 +386,13 @@ Recurse, just as always. One important thing to notice in this code: the one-lin
     }
 
 The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzgwMTIwNjcxLC01NzYxNDc1ODMsNjc2ND
-UzNzM0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUsLTIwNzA3NDI0
-Nyw1NDQ5MjA0MTEsLTEyMzMzNjk0MDksMTgxMzA5MDkxNyw2OT
-U4NTMxOTIsNTc5ODQ5ODQ4LC0xMzkxMzg0Nzg0LDE3ODU5Mjkw
-MDcsODc0MzkzMzQ4LDExNTEzMzc1NTQsMTY3Njg4MzMxMSwtMT
-MyNTg2MDM4NywtMjAxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3Nzcw
-MTIwNl19
+eyJoaXN0b3J5IjpbMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3Nj
+Q1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2NTg1LC0yMDcwNzQy
+NDcsNTQ0OTIwNDExLC0xMjMzMzY5NDA5LDE4MTMwOTA5MTcsNj
+k1ODUzMTkyLDU3OTg0OTg0OCwtMTM5MTM4NDc4NCwxNzg1OTI5
+MDA3LDg3NDM5MzM0OCwxMTUxMzM3NTU0LDE2NzY4ODMzMTEsLT
+EzMjU4NjAzODcsLTIwMTI2NjE5MTQsNzc2MjU1NDgyLC00Nzc3
+MDEyMDZdfQ==
 -->
