@@ -110,9 +110,9 @@ Without any of the three step, the program is incorrect, and cannot be fixed wit
 
 ## Meta-Language, Object-Language, and the Definitional Interpreter
 Lets step back and reflect on what we had done: in less then 10 lines of code, we had implemented an Interpreter! What is the magic? Before I answer this question, some terminology: when we use a program X to manipulate another program Y, the language X is in, is called the meta-language, and Y's language is the object-language.
-A definitional interpreter is when we use meta-language's feature to implement the corresponding object-language's feature. In this case, evaluate() is a definitional interpreter, because we use Java's Int to implement Calculator's Int. Definitional Interpreters are known for their simplicity, because they essentially does nothing.
+A definitional interpreter is when we use meta-language's feature to implement the corresponding object-language's feature. In this case, evaluate() is a definitional interpreter, because we use Java's Int to implement Calculator's Int. Definitional interpreters are known for their simplicity, because they essentially does nothing.
 
-However, despite doing nothing, they are very useful. The most straight-forward and popular use of a Definitional Interpreter is to give new syntax, or to provide eval(), for already-existing features, also known as inventing a novel programming language. We could take a Definitional Interpreter, and add a new language feature which we actually implement. We could also take a Definitional Interpreter, add some print to every case, and now we had a tracing debugger. Or, as the quote at the beginning of the chapter dictate, a compiler is also a Definitional Interpreter but slightly modified. Essentially, a Definitional Interpreter is a solid foundation, allowing you to make a bunch of modification to it, to get all sort of useful things.
+However, despite doing nothing, they are very useful. The most straight-forward and popular use of a definitional interpreter is to give new syntax, or to provide eval(), for already-existing features, also known as inventing a novel programming language. We could take a definitional interpreter, and add a new language feature which we actually implement. We could also take a definitional interpreter, add some print to every case, and now we had a tracing debugger. Or, as the quote at the beginning of the chapter dictate, a compiler is also a definitional interpreter but slightly modified. Essentially, a definitional interpreter is a solid foundation, allowing you to make a bunch of modification to it, to get all sort of useful things.
 
 ## Refactoring
 Manipulating JSON is hard! I have to remember the name and the type of everything, and that sure is tiresome! I am gonna refactor the JSON (JavaScript object) into Java Objects, since we are writing Java not JavaScript.
@@ -282,7 +282,7 @@ Now calling example.simp().pp() will give a string of length 126, as opposed to 
 
 ## Deja Vu
 
-If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit! And the code that will be executed, in that case, is exactly the code for a Definitional Interpreter. This is not a coincidence: the Definitional Interpreter is a recurring echo, which we will see multi, multiple of time in the book.
+If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit! And the code that will be executed, in that case, is exactly the code for a definitional Interpreter. This is not a coincidence: the definitional Interpreter is a recurring echo, which we will see multi, multiple of time in the book.
 
 ## Staging
 
@@ -387,17 +387,17 @@ is not what we want: everytime the inside function is executed, we are calling a
 
 The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
 
-Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our Definitional Interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hu
+Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
 
 Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDcwNDc4Njg4LDUyNzY4MDEyMiwtMTcxMz
-AzNzY0NCwtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxNDc1
-ODMsNjc2NDUzNzM0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUsLT
-IwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEyMzMzNjk0MDksMTgxMzA5
-MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4LC0xMzkxMzg0Nzg0LD
-E3ODU5MjkwMDcsODc0MzkzMzQ4LDExNTEzMzc1NTQsMTY3Njg4
-MzMxMV19
+eyJoaXN0b3J5IjpbLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNz
+EzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0
+NzU4Myw2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NS
+wtMjA3MDc0MjQ3LDU0NDkyMDQxMSwtMTIzMzM2OTQwOSwxODEz
+MDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgsLTEzOTEzODQ3OD
+QsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MTMzNzU1NCwxNjc2
+ODgzMzExXX0=
 -->
