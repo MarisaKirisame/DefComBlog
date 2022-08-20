@@ -387,13 +387,15 @@ is not what we want: everytime the inside function is executed, we are calling a
 
 The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
 
+Some profiling show that our code i
+
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NTE5MDcwMjksMTg4ODY3MDQ2MSwtNT
-c2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2
-NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0xMjMzMzY5NDA5LD
-E4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OCwtMTM5MTM4
-NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OCwxMTUxMzM3NTU0LD
-E2NzY4ODMzMTEsLTEzMjU4NjAzODcsLTIwMTI2NjE5MTQsNzc2
-MjU1NDgyXX0=
+eyJoaXN0b3J5IjpbLTY5MjA3MDMwNSwtMTk1MTkwNzAyOSwxOD
+g4NjcwNDYxLC01NzYxNDc1ODMsNjc2NDUzNzM0LC0xODY2Mjkw
+NzY2LC00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLT
+EyMzMzNjk0MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5
+ODQ4LC0xMzkxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LD
+ExNTEzMzc1NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMjAx
+MjY2MTkxNF19
 -->
