@@ -145,9 +145,7 @@ Manipulating JSON is hard! I have to remember the name and the type of everythin
     class Lit extends Expr {  
       int val;  
   
-      Lit(int val) {  
-        this.val = val;  
-      }  
+      Lit(int val) {this.val = val;}  
     }  
   
     class Plus extends Expr {  
@@ -210,18 +208,13 @@ We have to now fix the definition for prettyPrint() and evaluate(). While we are
 
 One problem with the above code, is that it rely heavily on instanceof, and downcasting, which is frown upon in Java. This could be fixed by making pp() and eval() abstract function in Expr, and have each subclass override it.
 
-    String pp() {  
-      return String.valueOf(val);  
-    }  
+    String pp() {return String.valueOf(val);}  
   
-    int eval() {  
-      return val;  
-    }
+    int eval() {return val;}
 
 The @override function  for Lit.
 
-    String pp() {  
-     return "(" + left.pp() + "+" + right.pp() + ")";}  
+    String pp() {return "(" + left.pp() + "+" + right.pp() + ")";}  
   
     int eval() {return left.eval() + right.eval();}
 
@@ -259,8 +252,8 @@ Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepti
 
 Now for Var, we lookup the value from the environment.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NjM1MDI1OTksLTQ1MzM0MDg4NywxOT
-Q1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUz
-NDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2Nz
-EsLTY2MTQ3MjIzOV19
+eyJoaXN0b3J5IjpbODQwNzQ5MzE3LC00NTMzNDA4ODcsMTk0NT
+A0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMxNjIsLTExMDQ1MzQ2
+OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0NDgsNTU1OTg4NjcxLC
+02NjE0NzIyMzldfQ==
 -->
