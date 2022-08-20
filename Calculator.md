@@ -274,12 +274,12 @@ Now calling example.simp().pp() will give a string of length 126, as opposed to 
 
 ## Deja Vu
 
-If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit!
+If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit! And the code that will be executed, in that case, is exactly the code for a Definitional Interpreter. This is not a coincidence: the Definitional Interpreter is a recurring echo, which we will see multi, multiple of time in the book.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMzY0MTE2ODgsLTQ3NzcwMTIwNiwtMT
-A5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4
-NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtND
-UzMzQwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkz
-MTYyLC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyND
-Q4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbNzc2MjU1NDgyLC00Nzc3MDEyMDYsLTEwOT
+Y5ODIyNzUsNzI2MTEwODM2LDE3NTY2MzcyMjksLTY5ODM4ODUy
+LDMyMjAyMDczMiwtMTEzNTM3NTQ3OSw4NDA3NDkzMTcsLTQ1Mz
+M0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2
+MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OC
+w1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
 -->
