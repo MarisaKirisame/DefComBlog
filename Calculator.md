@@ -256,8 +256,13 @@ OK. On to eval(). Hmm...
     }
 
 What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we dont know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in a Mapping, from variable to int. 
+
+    // In Expr
+    abstract int eval(Map<String, Integer> env);
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTg2Mjc0NzczOCwzMzQ3MzY1OTUsLTIwNT
+eyJoaXN0b3J5IjpbMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNT
 MwOTMxNjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5
 NTI0NDgsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
 -->
