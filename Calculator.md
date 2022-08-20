@@ -320,9 +320,17 @@ How do we turn the old Map<String, Integer> env, to a Map<String, Integer> loc a
 
 The other cases are uninteresting.
 
+    static int[] envToLocEnv(Map<String, Integer> env, Map<String, Integer> loc) {  
+      int[] arr = new int[loc.size()];  
+      for (Map.Entry<String, Integer> x : loc.entrySet()) {  
+        arr[x.getValue()] = env.get(x.getKey());  
+      }  
+      return arr;  
+    }
 
+Now, a function to turn the old Env into the new Env.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODAzMzg4MzY0LDU0NDkyMDQxMSwtMTIzMz
+eyJoaXN0b3J5IjpbNjY4NDUyNDY4LDU0NDkyMDQxMSwtMTIzMz
 M2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgs
 LTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MT
 MzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYwMzg3LC0yMDEyNjYx
