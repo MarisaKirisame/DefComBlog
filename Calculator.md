@@ -409,16 +409,17 @@ located is changed to return anonymous class, instead of anonymous function:
       return new LExpr() {  
         int eval(int[] env) {  
           return val;  
-      }  
-    };  
-   }
+        }  
+      };  
+    }
 
+OK, back onto the point. What is more efficient then the Java Runtime? The J
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2NDY0NzUxNSwtMTUzMjcwMDQ0NiwxND
-gyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NCwtMjM4NTE1
-OTA1LC0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcxMzAzNzY0NC
-wtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxNDc1ODMsNjc2
-NDUzNzM0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUsLTIwNzA3ND
-I0Nyw1NDQ5MjA0MTEsLTEyMzMzNjk0MDksMTgxMzA5MDkxNyw2
-OTU4NTMxOTJdfQ==
+eyJoaXN0b3J5IjpbLTUzNjExOTMsLTE1MzI3MDA0NDYsMTQ4Mj
+M0NDYxNSwtMTA5OTQyMTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkw
+NSwtMTgxNDQ3NTM5NSw1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLT
+E5NTE5MDcwMjksMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1
+MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2NTg1LC0yMDcwNzQyND
+csNTQ0OTIwNDExLC0xMjMzMzY5NDA5LDE4MTMwOTA5MTcsNjk1
+ODUzMTkyXX0=
 -->
