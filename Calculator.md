@@ -354,11 +354,12 @@ This isnt any faster. Duh - we are still calling .get(name) inside yolo(), but t
     int idx = loc.get(name);  
     return env[idx];  
 
-One thing to note, is that the code has two line. One line use only loc, and one line use env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user. If we have an Expr, which will be ran multiple time, we can execute `int idx = loc.get(name);` only once, store the result, and only execute `return env[idx];` everytime we run Expr.
+One thing to note, is that the code has two line. One line use only loc, and one line use env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user. If we have an Expr, which will be ran multiple time, we can execute `int idx = loc.get(name);` only once, store the result, and only execute `return env[idx];` everytime we run the Expr. This way, we will spend some time when we get the Expr, to precompute index, but then we will be very fast!
+
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NTQ4MTA3OTIsLTQ5ODI1NjU4NSwtMj
+eyJoaXN0b3J5IjpbLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwtMj
 A3MDc0MjQ3LDU0NDkyMDQxMSwtMTIzMzM2OTQwOSwxODEzMDkw
 OTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgsLTEzOTEzODQ3ODQsMT
 c4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MTMzNzU1NCwxNjc2ODgz
