@@ -267,9 +267,19 @@ By correctness, we mean that, given a program X, X.simp() is equal to X. By equa
 
 Let's get back to programming. For Plus, if left or right is 0, we just return the other Expr.
 
+    Expr simp() {  
+      if (left.equals(Cal.mkLit(0))) {  
+        return right;  
+      } else if (right.equals(Cal.mkLit(0))) {  
+        return left;  
+      } else {  
+        return this;  
+      }  
+    }
 
+Note that I had override equals for all the Expr. I wont show them because they are not interesting, but you can see them in the code.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTc4Mjc3NTg5NCw3MjYxMTA4MzYsMTc1Nj
+eyJoaXN0b3J5IjpbMTAwMjQzMDk2Nyw3MjYxMTA4MzYsMTc1Nj
 YzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5
 LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5NDUwNDMzODcsMzM0Nz
 M2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkw
