@@ -45,8 +45,8 @@ We will write it in Java, cause everyone know Java. I am gonna code it with you,
 
 We start by getting the 'type' field from the JSON, and see which case it is:
     
-    static String prettyPrint(JSONObject json) {  
-      String type = json.getString("type");
+    static String prettyPrint(JSONObject j) {  
+      String type = j.getString("type");
       return switch (type) { 
         case "Literal" -> throw new RuntimeException("...");  
         case "Plus" -> throw new RuntimeException("...");  
@@ -56,10 +56,10 @@ We start by getting the 'type' field from the JSON, and see which case it is:
 
 Literal is easy - we just print the value: 
 
-    static String prettyPrint(JSONObject json) {  
-      String type = json.getString("type");
+    static String prettyPrint(JSONObject j) {  
+      String type = j.getString("type");
       return switch (type) { 
-        case "Literal" -> String.valueOf(json.getInt("value"));  
+        case "Literal" -> String.valueOf(j.getInt("value"));  
         case "Plus" -> throw new RuntimeException("...");  
         case "Multiply" -> throw new RuntimeException("...");  
         default -> throw new RuntimeException("Unexpected: " + type);  
@@ -67,14 +67,14 @@ Literal is easy - we just print the value:
 
 Unlike Literal, Plus and Multiply contain more JSON as children, in left and right field, which we have to handle by calling prettyPrint again - recursion! 
 
-    static String prettyPrint(JSONObject json) {  
-      String type = json.getString("type");
+    static String prettyPrint(JSONObject j) {  
+      String type = j.getString("type");
       return switch (type) { 
-        case "Literal" -> String.valueOf(json.getInt("value"));  
-        case "Plus" -> "(" + prettyPrint(json.getJSONObject("left")) +  
-          "+" + prettyPrint(json.getJSONObject("right")) + ")";  
-        case "Multiply" -> "(" + prettyPrint(json.getJSONObject("left")) +
-          "*" + prettyPrint(json.getJSONObject("right")) + ")";  
+        case "Literal" -> String.valueOf(j.getInt("value"));  
+        case "Plus" -> "(" + prettyPrint(j.getJSONObject("left")) +  
+          "+" + prettyPrint(j.getJSONObject("right")) + ")";  
+        case "Multiply" -> "(" + prettyPrint(j.getJSONObject("left")) +
+          "*" + prettyPrint(j.getJSONObject("right")) + ")";  
         default -> throw new RuntimeException("Unexpected: " + type);  
     };  
 
@@ -82,14 +82,14 @@ Now calling prettyPrint() on our example return "((1+2)*(3+4))". Look pretty nea
 
 Moving on to the evaluator, which take a JSON, and return an Int:
 
-    static int evaluate(JSONObject json) {  
+    static int evaluate(JSONObject j) {  
       throw new RuntimeException("...");    
     }
 
 Get the type and match on it...
 
-    static int evaluate(JSONObject json) {  
-      String type = json.getString("type");  
+    static int evaluate(JSONObject j) {  
+      String type = j.getString("type");  
       return switch (type) {  
         case "Literal" -> throw new RuntimeException("...");  
         case "Plus" -> throw new RuntimeException("...");  
@@ -100,10 +100,10 @@ Get the type and match on it...
 
 Handle the base case (no recursion, simple)...
 
-    static int evaluate(JSONObject json) {  
-      String type = json.getString("type");  
+    static int evaluate(JSONObject j) {  
+      String type = j.getString("type");  
       return switch (type) {  
-        case "Literal" -> json.getInt("value");  
+        case "Literal" -> j.getInt("value");  
         case "Plus" -> throw new RuntimeException("...");  
         case "Multiply" -> throw new RuntimeException("...");  
         default -> throw new RuntimeException("Unexpected value: " + type);  
@@ -113,11 +113,11 @@ Handle the base case (no recursion, simple)...
 Handle the recursive case (recurse into the children, and combine the result)...
 
     static int evaluate(JSONObject json) {  
-      String type = json.getString("type");  
+      String type = j.getString("type");  
       return switch (type) {  
-        case "Literal" -> json.getInt("value");  
-        case "Plus" -> evaluate(json.getJSONObject("left")) + evaluate(json.getJSONObject("right"));  
-        case "Multiply" -> evaluate(json.getJSONObject("left")) * evaluate(json.getJSONObject("right"));  
+        case "Literal" -> j.getInt("value");  
+        case "Plus" -> evaluate(j.getJSONObject("left")) + evaluate(j.getJSONObject("right"));  
+        case "Multiply" -> evaluate(j.getJSONObject("left")) * evaluate(j.getJSONObject("right"));  
         default -> throw new RuntimeException("Unexpected value: " + type);  
       };  
     }
@@ -262,7 +262,8 @@ What do I put in here? Seems like we are stuck! For a good reason: we now have u
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNT
-MwOTMxNjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5
-NTI0NDgsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
+eyJoaXN0b3J5IjpbMTI3MTk4MDk5MSwxOTQ1MDQzMzg3LDMzND
+czNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5
+MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2NzEsLTY2MTQ3MjIzOV
+19
 -->
