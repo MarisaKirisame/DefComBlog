@@ -387,8 +387,9 @@ is not what we want: everytime the inside function is executed, we are calling a
 
 The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
 
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MzU0MzAzMzksMTg4ODY3MDQ2MSwtNT
+eyJoaXN0b3J5IjpbLTE5NTE5MDcwMjksMTg4ODY3MDQ2MSwtNT
 c2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5MDc2NiwtNDk4MjU2
 NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC0xMjMzMzY5NDA5LD
 E4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0OTg0OCwtMTM5MTM4
