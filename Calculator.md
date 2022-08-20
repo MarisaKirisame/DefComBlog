@@ -277,12 +277,18 @@ Let's get back to programming. For Plus, if left or right is 0, we just return t
       }  
     }
 
-Note that I had override equals for all the Expr. I wont show them because they are not interesting, but you can see them in the code.
+Note that I had override equals for all the Expr. I wont show them because they are not interesting, but you can see them in the code. Are we done? If we think about it, if left and right are both Lit, we can do our simplification by adding them up.
+
+    if (left instanceof Lit && right instanceof Lit) {  
+      return mkLit(((Lit) left).val + ((Lit) right).val);  
+    }
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAwMjQzMDk2Nyw3MjYxMTA4MzYsMTc1Nj
-YzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5
-LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5NDUwNDMzODcsMzM0Nz
-M2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkw
-MTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX
-0=
+eyJoaXN0b3J5IjpbLTE0NTEyODE1MzMsNzI2MTEwODM2LDE3NT
+Y2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDczMiwtMTEzNTM3NTQ3
+OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOTQ1MDQzMzg3LDMzND
+czNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5
+MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2NzEsLTY2MTQ3MjIzOV
+19
 -->
