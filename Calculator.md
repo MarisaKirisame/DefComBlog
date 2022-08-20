@@ -430,13 +430,13 @@ Isnt this just the code for eval(), our definitional interpreter, only you put i
 
 ## Conclusion
 If you want a 1-day intro to compiler, this is it. Stop reading.
-This chapter is a microcosm of the whole book: It contain programming language design, definitional interpreter and compiler, understanding performance bottleneck by profiling and utilizing hardware knowledge, optimization 
+This chapter is a microcosm of the whole book: It contain programming language design, evaluation, performance debugging by profiling and reasoning about hardware, optimization, staging, and finally code generation 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5NjQxMzYyMzQsNjEwMjI0NjU3LC0xOD
-I1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0
-MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOT
-UsNTI3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4
-ODg2NzA0NjEsLTU3NjE0NzU4Myw2NzY0NTM3MzQsLTE4NjYyOT
-A3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0NDkyMDQxMSwt
-MTIzMzM2OTQwOV19
+eyJoaXN0b3J5IjpbLTIyOTY3OTA1LDYxMDIyNDY1NywtMTgyNT
+k3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIx
+NTcsMTU0MTM1NDc0NCwtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LD
+UyNzY4MDEyMiwtMTcxMzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4
+NjcwNDYxLC01NzYxNDc1ODMsNjc2NDUzNzM0LC0xODY2MjkwNz
+Y2LC00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEy
+MzMzNjk0MDldfQ==
 -->
