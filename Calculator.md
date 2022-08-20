@@ -349,14 +349,18 @@ Now, a function to turn the old Env into the new Env. Now we can profile our cod
       }  
     }
 
-This isnt any faster. Duh - we are still calling .get(name) inside yolo(), but the point is to not call it!
+This isnt any faster. Duh - we are still calling .get(name) inside yolo(), but the point is to not call it! Lets take a moment, to look at yolo() for Var and think.
 
+    int idx = loc.get(name);  
+    return env[idx];  
+
+One thing to note, is that the code has two line. One line use only loc, and one line use env, alongside the value produced by loc.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLTEyMz
-MzNjk0MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4
-LC0xMzkxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LDExNT
-EzMzc1NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMjAxMjY2
-MTkxNCw3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4MjI3NS
-w3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIw
-NzMyXX0=
+eyJoaXN0b3J5IjpbLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0ND
+kyMDQxMSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5
+Miw1Nzk4NDk4NDgsLTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4Nz
+QzOTMzNDgsMTE1MTMzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYw
+Mzg3LC0yMDEyNjYxOTE0LDc3NjI1NTQ4MiwtNDc3NzAxMjA2LC
+0xMDk2OTgyMjc1LDcyNjExMDgzNiwxNzU2NjM3MjI5LC02OTgz
+ODg1Ml19
 -->
