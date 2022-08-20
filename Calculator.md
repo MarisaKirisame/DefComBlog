@@ -439,14 +439,14 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 
  - 1: rewrite LExpr's compile to generate python code instead of java code. When you do that, of the three language (Calculator, Java, Python), which are the Meta-Language, and which are the Object-Language?
 - 0: Introduce Minus, and Divide, and think about what simp() rule there are. Is `(a + b) - b -> a` a good rule? What about `(a / b) * b -> a` and `(a * b) / b -> a`? How about `a * 2 -> a + a`? Mult is more expensive so we want to do + instead, right?
- -  2: look at the code that generate the Expr that represent sum of result matrix multiplication. Try to understand it, and modify it so it return the determinant of resulting matrix multiplication
+ -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the determinant of resulting matrix multiplication. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the multiplcation, not the determinant? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMTMxODEzMzksNzUzMjMxOTA2LDYxMD
-IyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0
-NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NCwtMjM4NTE1OTA1LC
-0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcxMzAzNzY0NCwtMTk1
-MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxNDc1ODMsNjc2NDUzNz
-M0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1
-NDQ5MjA0MTFdfQ==
+eyJoaXN0b3J5IjpbLTg2NDUxNDgwNCw3NTMyMzE5MDYsNjEwMj
+I0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2
+MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLT
+E4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOTUx
+OTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0NzU4Myw2NzY0NTM3Mz
+QsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0
+NDkyMDQxMV19
 -->
