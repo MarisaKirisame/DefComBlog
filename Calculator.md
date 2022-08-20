@@ -263,10 +263,13 @@ Urgh. What a mess! Look like there is a bunch of 0 in our program. We can write 
     
 The case for Lit and Var is trivial: there is nothing to simplify, so we just {return this;}. In fact, we had moved this code into the base class, Expr, because it is always correct to simplify, by doing nothing!
 
-By correctness, we mean that, given a program X, X.simp() is equal to X. By equality, X and Y are equal, if forall env, X.eval(env) == Y.eval(env).
+By correctness, we mean that, given a program X, X.simp() is equal to X. By equality, X and Y are equal, if and only if forall env, X.eval(env) == Y.eval(env). When writing optimizations, this is critical to keep in mind - we dont want to change the meaning of user program!
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MD
-c0OTMxNywtNDUzMzQwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1
-LC0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC
-0xNTI2OTUyNDQ4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbLTY5ODM4ODUyLDMyMjAyMDczMiwtMTEzNT
+M3NTQ3OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOTQ1MDQzMzg3
+LDMzNDczNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5MywtMT
+g4NDk5MDEzMywtMTUyNjk1MjQ0OCw1NTU5ODg2NzEsLTY2MTQ3
+MjIzOV19
 -->
