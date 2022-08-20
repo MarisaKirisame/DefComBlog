@@ -38,6 +38,8 @@ As an example, (1 + 2) * (3 + 4) is written as
 
 What a pain in the ass. Even though we don't have a parser, we can still write a pretty-printer: it output the code in a prettier, actually-human readable format.
 
+## Pretty Print
+
 We will write it in Java, cause everyone know Java. I am gonna code it with you, step by step. This is like pair programming.
     
     static String prettyPrint(JSONObject json) {  
@@ -67,6 +69,8 @@ Unlike Literal, Plus and Multiply contain more JSON as children, in left and rig
           "*" + prettyPrint(j.getJSONObject("right")) + ")";  
 
 Now calling prettyPrint() on our example return "((1+2)*(3+4))". Look pretty neat.
+
+## Evaluate
 
 Moving on to the evaluator, which take a JSON, and return an Int:
 
@@ -231,6 +235,8 @@ Pretty Good! I had wrote another example, which multiply 2 2*2 matrix, and add u
 
 Urgh. What a mess! Look like there is a bunch of 0 in our program. We can write a function, simp(), just like pp() and eval(), to simplify the input program and remove them.
 
+## Simplification
+
     // In Expr
     Expr simp() {return this;}
     
@@ -278,7 +284,7 @@ Now calling example.simp().pp() will give a string of length 126, as opposed to 
 
 If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit! And the code that will be executed, in that case, is exactly the code for a Definitional Interpreter. This is not a coincidence: the Definitional Interpreter is a recurring echo, which we will see multi, multiple of time in the book.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE2MDc1MzU1OTQsLTIwMTI2NjE5MTQsNz
+eyJoaXN0b3J5IjpbLTEzMjU4NjAzODcsLTIwMTI2NjE5MTQsNz
 c2MjU1NDgyLC00Nzc3MDEyMDYsLTEwOTY5ODIyNzUsNzI2MTEw
 ODM2LDE3NTY2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDczMiwtMT
 EzNTM3NTQ3OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOTQ1MDQz
