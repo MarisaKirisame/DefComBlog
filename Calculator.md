@@ -288,6 +288,7 @@ If we look at our simp(), we will see that it is very much like eval()! In fact,
 
 Ignore the scary title for now. Lets try to make our Interpreter faster. I had increase n from 2 to 4, so we are now multiplying 2 4*4 matrix, and run the eval() in a loop, and profiled the resulting code.
 
+
 The profiler tell me that most time is spend in Map.get(). Why? What is in a Map?
 
 There are multiple ways to implement a Map from String to Int. Most notable examples are search tree, hash map, and a trie.
@@ -330,11 +331,11 @@ The other cases are uninteresting.
 
 Now, a function to turn the old Env into the new Env.
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNjY4NDUyNDY4LDU0NDkyMDQxMSwtMTIzMz
-M2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgs
-LTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MT
-MzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYwMzg3LC0yMDEyNjYx
-OTE0LDc3NjI1NTQ4MiwtNDc3NzAxMjA2LC0xMDk2OTgyMjc1LD
-cyNjExMDgzNiwxNzU2NjM3MjI5LC02OTgzODg1MiwzMjIwMjA3
-MzJdfQ==
+eyJoaXN0b3J5IjpbLTM2NjcwMjgxNCw1NDQ5MjA0MTEsLTEyMz
+MzNjk0MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5ODQ4
+LC0xMzkxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LDExNT
+EzMzc1NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMjAxMjY2
+MTkxNCw3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4MjI3NS
+w3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIw
+NzMyXX0=
 -->
