@@ -261,9 +261,9 @@ Urgh. What a mess! Look like there is a bunch of 0 in our program. We can write 
     // In Expr
     Expr simp() {return this;}
     
-The case for Lit and Var is trivial: there is nothing to simplify, so we just {return this;}. In 
+The case for Lit and Var is trivial: there is nothing to simplify, so we just {return this;}. In fact, we had moved this code into the base class, Expr, because it is always correct to simplify, by doing nothing!
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0ODI3NzIwNTMsODQwNzQ5MzE3LC00NT
+eyJoaXN0b3J5IjpbLTExMzUzNzU0NzksODQwNzQ5MzE3LC00NT
 MzNDA4ODcsMTk0NTA0MzM4NywzMzQ3MzY1OTUsLTIwNTMwOTMx
 NjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1MjY5NTI0ND
 gsNTU1OTg4NjcxLC02NjE0NzIyMzldfQ==
