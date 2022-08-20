@@ -387,15 +387,17 @@ is not what we want: everytime the inside function is executed, we are calling a
 
 The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
 
-Some profiling show that our code i
+Wait, compile time?
+
+Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime.
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTY5MjA3MDMwNSwtMTk1MTkwNzAyOSwxOD
-g4NjcwNDYxLC01NzYxNDc1ODMsNjc2NDUzNzM0LC0xODY2Mjkw
-NzY2LC00OTgyNTY1ODUsLTIwNzA3NDI0Nyw1NDQ5MjA0MTEsLT
-EyMzMzNjk0MDksMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5ODQ5
-ODQ4LC0xMzkxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4LD
-ExNTEzMzc1NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMjAx
-MjY2MTkxNF19
+eyJoaXN0b3J5IjpbLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMT
+g4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2NjI5
+MDc2NiwtNDk4MjU2NTg1LC0yMDcwNzQyNDcsNTQ0OTIwNDExLC
+0xMjMzMzY5NDA5LDE4MTMwOTA5MTcsNjk1ODUzMTkyLDU3OTg0
+OTg0OCwtMTM5MTM4NDc4NCwxNzg1OTI5MDA3LDg3NDM5MzM0OC
+wxMTUxMzM3NTU0LDE2NzY4ODMzMTEsLTEzMjU4NjAzODcsLTIw
+MTI2NjE5MTRdfQ==
 -->
