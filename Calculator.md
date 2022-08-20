@@ -389,7 +389,7 @@ The case for Var. The lambda perfectly separate the two world - a world where we
 
 Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
 
-Some profiling show that our code is now about 4x faster, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer HashMap or any particular Java library call, but time is instead spent during all the recursive call.
+Some profiling show that our code is now about 4x as fast, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer HashMap or any particular Java library call, but time is instead spent during all the recursive call.
 
 ## Code Generation
 
@@ -427,8 +427,12 @@ Huh. Look very familiar...
     String compile() {return "env[" + String.valueOf(idx) + "]";}
 
 Isnt this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime. You might recall that this code is also exactly our pp(), which is not a coincidence. PrettyPrinting try to output a representation of the code, which is also what compile() does as oppose to eval(). With compile() coded up we can execute the code 10x as fast then LExpr's eval() - which, keep in mind, is 4x as fast then Expr's eval. So, we achieve a whooping 40x speedup!
+
+## Conclusion
+If you want a 1-day intro to compiler, this is it. Stop reading.
+This chapter is a microcosm of the whole book: It contain programming language design, 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTM1NTQ5MzQzMSw2MTAyMjQ2NTcsLTE4Mj
+eyJoaXN0b3J5IjpbLTU1MjQ2NzM2Myw2MTAyMjQ2NTcsLTE4Mj
 U5NzI3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQy
 MTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NS
 w1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4
