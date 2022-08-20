@@ -294,15 +294,16 @@ There are multiple ways to implement a Map from String to Int. Most notable exam
 However, inorder to lookup a key, they all need to traverse the String to compare/compute the hash/traverse the trie, and look at multiple buckets/nodes to find the value. Looking at multiple places is not good, as it require multiple memory fetch, which may be a cache miss and stall the pipeline, and it also require conditional jump, which may fail the branch predictor and require conditional jump. In short - we will like to look only once. If env is an Array, there are less cache miss as the values are compactly stored, and there are no failed branch prediction because there are no branch.
 
     // Inside Expr
-    abstract int yolo(Map<String, Integer> loc, int[] env);
+    abstract int yolo(int[] env);
 
-We will call our new function yolo, because you only look once (into the array)
+We will call our new function yolo, because you only look once (into the array).
+The change for Lit, Plus, Mult are all mecahnical
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTgxMzA5MDkxNyw2OTU4NTMxOTIsNTc5OD
-Q5ODQ4LC0xMzkxMzg0Nzg0LDE3ODU5MjkwMDcsODc0MzkzMzQ4
-LDExNTEzMzc1NTQsMTY3Njg4MzMxMSwtMTMyNTg2MDM4NywtMj
-AxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3NzcwMTIwNiwtMTA5Njk4
-MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMz
-IyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQw
-ODg3XX0=
+eyJoaXN0b3J5IjpbLTE0OTgyODkzMDksMTgxMzA5MDkxNyw2OT
+U4NTMxOTIsNTc5ODQ5ODQ4LC0xMzkxMzg0Nzg0LDE3ODU5Mjkw
+MDcsODc0MzkzMzQ4LDExNTEzMzc1NTQsMTY3Njg4MzMxMSwtMT
+MyNTg2MDM4NywtMjAxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3Nzcw
+MTIwNiwtMTA5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOS
+wtNjk4Mzg4NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0
+OTMxN119
 -->
