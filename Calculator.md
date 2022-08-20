@@ -140,15 +140,15 @@ However, despite doing nothing, they are very useful. The most straight-forward 
 ## Refactoring
 Manipulating JSON is hard! I have to remember the name and the type of everything, and that sure is tiresome! I am gonna refactor the JSON (JavaScript object) into Java Objects, since we are writing Java not JavaScript.
 
-    class Expr {}  
+    static class Expr {}  
   
-    class Lit extends Expr {  
+    static class Lit extends Expr {  
       int val;  
   
       Lit(int val) {this.val = val;}  
     }  
   
-    class Plus extends Expr {  
+    static class Plus extends Expr {  
       Expr left, right;  
   
       Plus(Expr left, Expr right) {  
@@ -157,7 +157,7 @@ Manipulating JSON is hard! I have to remember the name and the type of everythin
       }  
     }  
   
-    class Mult extends Expr {  
+    static class Mult extends Expr {  
       Expr left, right;  
   
       Mult(Expr left, Expr right) {  
@@ -228,7 +228,7 @@ Right now our language is really, really boring. It react the same (output a con
 
 The easiest way to do this is to add variable to the language. For now, for the sake of complexity, all variables are defined externally, inputted by the user when the program is ran. We will add defining and assigning to variable some other times.
 
-    class Var extends Expr {  
+    static class Var extends Expr {  
       String name;  
       Var(String name) {this.name = name;}  
     
@@ -269,9 +269,10 @@ Let's get back to programming. For Plus, if left or right is 0, we just return t
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzI2MTEwODM2LDE3NTY2MzcyMjksLTY5OD
-M4ODUyLDMyMjAyMDczMiwtMTEzNTM3NTQ3OSw4NDA3NDkzMTcs
-LTQ1MzM0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5NSwtMjA1Mz
-A5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1
-MjQ0OCw1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
+eyJoaXN0b3J5IjpbLTc4Mjc3NTg5NCw3MjYxMTA4MzYsMTc1Nj
+YzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5
+LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5NDUwNDMzODcsMzM0Nz
+M2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkw
+MTMzLC0xNTI2OTUyNDQ4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX
+0=
 -->
