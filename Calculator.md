@@ -269,7 +269,9 @@ Let's get back to programming, and fill out the case for Plus.
 
     Expr left = this.left.simp();  
     Expr right = this.right.simp();
-    return 
+    return mkPlus(left, right);
+
+We begin by traversing left and right, simplifying them.
 
 If left or right is 0, we just return the other Expr.
 
@@ -291,7 +293,7 @@ Note that I had override equals for all the Expr. I wont show them because they 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE3Njk1MDI1NDQsNzI2MTEwODM2LDE3NT
+eyJoaXN0b3J5IjpbLTEwOTY5ODIyNzUsNzI2MTEwODM2LDE3NT
 Y2MzcyMjksLTY5ODM4ODUyLDMyMjAyMDczMiwtMTEzNTM3NTQ3
 OSw4NDA3NDkzMTcsLTQ1MzM0MDg4NywxOTQ1MDQzMzg3LDMzND
 czNjU5NSwtMjA1MzA5MzE2MiwtMTEwNDUzNDY5MywtMTg4NDk5
