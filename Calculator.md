@@ -372,9 +372,9 @@ The case for Lit is simple. We return a Function, which take env and ignore it. 
       return env -> env[idx];  
     }
 
-The case for Var. The lambda perfectly separate the two world - 
+The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk1MzMzMjMzNCw2NzY0NTM3MzQsLTE4Nj
+eyJoaXN0b3J5IjpbLTU3NjE0NzU4Myw2NzY0NTM3MzQsLTE4Nj
 YyOTA3NjYsLTQ5ODI1NjU4NSwtMjA3MDc0MjQ3LDU0NDkyMDQx
 MSwtMTIzMzM2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nz
 k4NDk4NDgsLTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4NzQzOTMz
