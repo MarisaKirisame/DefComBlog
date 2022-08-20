@@ -406,7 +406,7 @@ OK, back onto the point. What is more efficient then the Java Runtime? The Java 
 
 Huh. Look very familiar...
 
-    String compile() {return "env[" + String.valueOf(idx) + "]";}
+    String compile() {return "env[" + String.(idx) + "]";}
 
 Isnt this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime. You might recall that this code is also exactly our pp(), which is not a coincidence. PrettyPrinting try to output a representation of the code, which is also what compile() does as oppose to eval(). With compile() coded up we can execute the code 10x as fast then LExpr's eval() - which, keep in mind, is 4x as fast then Expr's eval. So, we achieve a whooping 40x speedup!
 
@@ -424,7 +424,7 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzQ1NTkyODc4LC05OTg3MTAyMDksLTIwND
+eyJoaXN0b3J5IjpbOTAwNzU3NjIwLC05OTg3MTAyMDksLTIwND
 E4ODUwMTQsNzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4
 MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMT
 U0MTM1NDc0NCwtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LDUyNzY4
