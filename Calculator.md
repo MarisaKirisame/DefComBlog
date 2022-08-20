@@ -256,11 +256,11 @@ Pretty Good! I had wrote another example, which multiply 2 2*2 matrix, and add u
 
     ((((0+((0+(a_0_0*b_0_0))+(a_0_1*b_1_0)))+((0+(a_0_0*b_0_1))+(a_0_1*b_1 ...
 
-Urgh. What a mess! Look like there is a bunch of 0 in our pro
+Urgh. What a mess! Look like there is a bunch of 0 in our program. We can write a function, simp(), just like pp() and eval(), to simplify the input program and remove them.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ4ODY2ODQ5MSw4NDA3NDkzMTcsLTQ1Mz
-M0MDg4NywxOTQ1MDQzMzg3LDMzNDczNjU5NSwtMjA1MzA5MzE2
-MiwtMTEwNDUzNDY5MywtMTg4NDk5MDEzMywtMTUyNjk1MjQ0OC
-w1NTU5ODg2NzEsLTY2MTQ3MjIzOV19
+eyJoaXN0b3J5IjpbMjgwNjk5NzYyLDg0MDc0OTMxNywtNDUzMz
+QwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYy
+LC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LD
+U1NTk4ODY3MSwtNjYxNDcyMjM5XX0=
 -->
