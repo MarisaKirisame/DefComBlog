@@ -255,9 +255,9 @@ OK. On to eval(). Hmm...
       throw new RuntimeException("...");  
     }
 
-What do I put in here? Seems like we are stuck! For a good reason: we now have 
+What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we dont know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMT
-A0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2OTUyNDQ4LDU1NTk4
-ODY3MSwtNjYxNDcyMjM5XX0=
+eyJoaXN0b3J5IjpbLTIwMzA2MTQxNzUsMzM0NzM2NTk1LC0yMD
+UzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC0xNTI2
+OTUyNDQ4LDU1NTk4ODY3MSwtNjYxNDcyMjM5XX0=
 -->
