@@ -286,16 +286,18 @@ If we look at our simp(), we will see that it is very much like eval()! In fact,
 
 ## Staging
 
-Ignore the scary title for now. Lets try to make our Interpreter faster. I had increase n from 2 to 4, so we are now multiplying 2 4*4 matrix, and run the eval() in a hot loop,
+Ignore the scary title for now. Lets try to make our Interpreter faster. I had increase n from 2 to 4, so we are now multiplying 2 4*4 matrix, and run the eval() in a loop, and profiled the resulting code.
+
+The profiler tell me that most time is spend in Map.get()
 
 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTExMTk1MDI5NTAsMTY3Njg4MzMxMSwtMT
-MyNTg2MDM4NywtMjAxMjY2MTkxNCw3NzYyNTU0ODIsLTQ3Nzcw
-MTIwNiwtMTA5Njk4MjI3NSw3MjYxMTA4MzYsMTc1NjYzNzIyOS
-wtNjk4Mzg4NTIsMzIyMDIwNzMyLC0xMTM1Mzc1NDc5LDg0MDc0
-OTMxNywtNDUzMzQwODg3LDE5NDUwNDMzODcsMzM0NzM2NTk1LC
-0yMDUzMDkzMTYyLC0xMTA0NTM0NjkzLC0xODg0OTkwMTMzLC0x
-NTI2OTUyNDQ4XX0=
+eyJoaXN0b3J5IjpbMTE1MTMzNzU1NCwxNjc2ODgzMzExLC0xMz
+I1ODYwMzg3LC0yMDEyNjYxOTE0LDc3NjI1NTQ4MiwtNDc3NzAx
+MjA2LC0xMDk2OTgyMjc1LDcyNjExMDgzNiwxNzU2NjM3MjI5LC
+02OTgzODg1MiwzMjIwMjA3MzIsLTExMzUzNzU0NzksODQwNzQ5
+MzE3LC00NTMzNDA4ODcsMTk0NTA0MzM4NywzMzQ3MzY1OTUsLT
+IwNTMwOTMxNjIsLTExMDQ1MzQ2OTMsLTE4ODQ5OTAxMzMsLTE1
+MjY5NTI0NDhdfQ==
 -->
