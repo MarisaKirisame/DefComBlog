@@ -419,16 +419,16 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 
 ## Challenge
 
- - 1: rewrite LExpr's compile to generate python code instead of java code. When you do that, of the three language (Calculator, Java, Python), which are the Meta-Language, and which are the Object-Language?
-- 0: Introduce Minus, and Divide, and think about what simp() rule there are. Is `(a + b) - b -> a` a good rule? What about `(a / b) * b -> a` and `(a * b) / b -> a`? How about `a * 2 -> a + a`? Mult is more expensive so we want to do + instead, right?
- -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
+- 0: rewrite LExpr's compile to generate python code instead of java code. When you do that, of the three language (Calculator, Java, Python), which are the Meta-Language, and which are the Object-Language?
+- 1: Introduce Minus, and Divide, and think about what simp() rule there are. Is `(a + b) - b -> a` a good rule? What about `(a / b) * b -> a` and `(a * b) / b -> a`? How about `a * 2 -> a + a`? Mult is more expensive so we want to do + instead, right?
+-  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDU4NzA5MzcsLTIwNDE4ODUwMTQsNz
-UzMjMxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcw
-MDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NC
-wtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcx
-MzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxND
-c1ODMsNjc2NDUzNzM0LC0xODY2MjkwNzY2LC00OTgyNTY1ODUs
-LTIwNzA3NDI0N119
+eyJoaXN0b3J5IjpbLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NT
+MyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAw
+NDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC
+0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEz
+MDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0Nz
+U4Myw2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5ODI1NjU4NSwt
+MjA3MDc0MjQ3XX0=
 -->
