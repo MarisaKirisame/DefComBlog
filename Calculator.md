@@ -112,10 +112,6 @@ Handle the base case (no recursion, simple)...
 
 Handle the recursive case (recurse into the children, and combine the result)...
 
-    static int evaluate(JSONObject json) {  
-      String type = j.getString("type");  
-      return switch (type) {  
-        case "Literal" -> j.getInt("value");  
         case "Plus" -> evaluate(j.getJSONObject("left")) + evaluate(j.getJSONObject("right"));  
         case "Multiply" -> evaluate(j.getJSONObject("left")) * evaluate(j.getJSONObject("right"));  
         default -> throw new RuntimeException("Unexpected value: " + type);  
@@ -208,17 +204,17 @@ We have to now fix the definition for prettyPrint() and evaluate(). While we are
 
 One problem with the above code, is that it rely heavily on instanceof, and downcasting, which is frown upon in Java. This could be fixed by making pp() and eval() abstract function in Expr, and have each subclass override it.
 
+    // In Lit
     String pp() {return String.valueOf(val);}  
   
     int eval() {return val;}
 
-The @override function  for Lit.
-
+    // In Plus
     String pp() {return "(" + left.pp() + "+" + right.pp() + ")";}  
   
     int eval() {return left.eval() + right.eval();}
 
-The @override function for Plus. The case for Mult is almost the same, so I will not show it here.
+The @override function for Lit and Plus. The case for Mult is almost the same, so I will not show it here.
 
 Alas, we cant write a compiler yet, as our language is so trivial a compiler is pointless. Let's add some more feature.
 
@@ -280,15 +276,17 @@ We begin by traversing left and right, simplifying them. Note that the above cod
         return left;  
       }
 
-If left or right is 0, we just return the other Expr. Note that I had override equals for all the Expr. I wont show them because they are not interesting, but you can see them in the code. Another caseLAre we done? If we think about it, if left and right are both Lit, we can do our simplification by adding them up.
+If left or right is 0, we just return the other Expr. Note that I had override equals for all the Expr. I wont show them because they are not interesting, but you can see them in the code. Another case:
 
+    // After left, right is defined, before mkPlus
     if (left instanceof Lit && right instanceof Lit) {  
       return mkLit(((Lit) left).val + ((Lit) right).val);  
     }
 
+If left and right are both Lit, we can do our simplification by adding them up.
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTAxNDUwNjQ4MywtMTA5Njk4MjI3NSw3Mj
+eyJoaXN0b3J5IjpbMTQ4MDQyOTU0MCwtMTA5Njk4MjI3NSw3Mj
 YxMTA4MzYsMTc1NjYzNzIyOSwtNjk4Mzg4NTIsMzIyMDIwNzMy
 LC0xMTM1Mzc1NDc5LDg0MDc0OTMxNywtNDUzMzQwODg3LDE5ND
 UwNDMzODcsMzM0NzM2NTk1LC0yMDUzMDkzMTYyLC0xMTA0NTM0
