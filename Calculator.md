@@ -311,8 +311,18 @@ How do we turn the old Map<String, Integer> env, to a Map<String, Integer> loc a
 
     // In Expr
     abstract void locate(Map<String, Integer> loc);
+    // In Var
+    void locate(Map<String, Integer> loc) {  
+      if (!loc.containsKey(name)) {  
+        loc.put(name, loc.size());  
+      }  
+    }
+
+The other cases are uninteresting.
+
+
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTM5ODYzMjE4LDU0NDkyMDQxMSwtMTIzMz
+eyJoaXN0b3J5IjpbODAzMzg4MzY0LDU0NDkyMDQxMSwtMTIzMz
 M2OTQwOSwxODEzMDkwOTE3LDY5NTg1MzE5Miw1Nzk4NDk4NDgs
 LTEzOTEzODQ3ODQsMTc4NTkyOTAwNyw4NzQzOTMzNDgsMTE1MT
 MzNzU1NCwxNjc2ODgzMzExLC0xMzI1ODYwMzg3LC0yMDEyNjYx
