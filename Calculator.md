@@ -223,7 +223,7 @@ Urgh. What a mess! Look like there is a bunch of 0 in our program. We can write 
     // In Expr
     Expr simp() {return this;}
     
-The case for Lit and Var is trivial: there is nothing to simplify, so we just {return this;}. In fact, we had moved this code into the base class, Expr, because it is always correct to simplify, by doing nothing!
+The case for Lit and Var is trivial: there is nothing to simplify, so we just `return this;`. In fact, we had moved this code into the base class, Expr, because it is always correct to simplify, by doing nothing!
 
 By correctness, we mean that, given a program X, X.simp() is equal to X. By equality, X and Y are equal, if and only if forall env, X.eval(env) == Y.eval(env). When writing optimizations, this is critical to keep in mind - we dont want to change the meaning of user program!
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjA0MjA2ODM2MSwxMjA0OTY2MTE4LC05Mz
-g3MzY2LC05OTg3MTAyMDksLTIwNDE4ODUwMTQsNzUzMjMxOTA2
-LDYxMDIyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcwMDQ0NiwxND
-gyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NCwtMjM4NTE1
-OTA1LC0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcxMzAzNzY0NC
-wtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxNDc1ODMsNjc2
-NDUzNzM0XX0=
+eyJoaXN0b3J5IjpbODA4MzMzMzU1LDEyMDQ5NjYxMTgsLTkzOD
+czNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NTMyMzE5MDYs
+NjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0OD
+IzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5
+MDUsLTE4MTQ0NzUzOTUsNTI3NjgwMTIyLC0xNzEzMDM3NjQ0LC
+0xOTUxOTA3MDI5LDE4ODg2NzA0NjEsLTU3NjE0NzU4Myw2NzY0
+NTM3MzRdfQ==
 -->
