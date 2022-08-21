@@ -22,9 +22,9 @@ We shall begin with a language so simple, your (non-scientific) calculator will 
 
 Now we have to specify the JSON format for our program.
 
-For a number x, the format is {type: "Literal", value: x}.
-For a + b, the format is {type: "Plus", left: a, right: b}
-For a * b, the format is {type: "Multiply", left: a, right: b}
+For a number x, the format is `{type: "Literal", value: x}`.
+For a + b, the format is `{type: "Plus", left: a, right: b}`.
+For a * b, the format is `{type: "Multiply", left: a, right: b}`.
 
 As an example, (1 + 2) * (3 + 4) is written as
 
@@ -61,7 +61,7 @@ Literal is easy - we just print the value:
 
         case "Literal" -> String.valueOf(j.getInt("value"));  
 
-Unlike Literal, Plus and Multiply contain more JSON as children, in left and right field, which we have to handle by calling prettyPrint again - recursion! 
+Unlike Literal, Plus and Multiply contain more JSON as children, in left and right field, which we have to handle by calling prettyPrint() again - recursion! 
 
         case "Plus" -> "(" + prettyPrint(j.getJSONObject("left")) +  
           "+" + prettyPrint(j.getJSONObject("right")) + ")";  
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4Nz
-EwMjA5LC0yMDQxODg1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcs
-LTE4MjU5NzI3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMT
-A5OTQyMTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3
-NTM5NSw1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMj
-ksMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2
-NjI5MDc2Nl19
+eyJoaXN0b3J5IjpbMjA0MjA2ODM2MSwxMjA0OTY2MTE4LC05Mz
+g3MzY2LC05OTg3MTAyMDksLTIwNDE4ODUwMTQsNzUzMjMxOTA2
+LDYxMDIyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcwMDQ0NiwxND
+gyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NCwtMjM4NTE1
+OTA1LC0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcxMzAzNzY0NC
+wtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYxNDc1ODMsNjc2
+NDUzNzM0XX0=
 -->
