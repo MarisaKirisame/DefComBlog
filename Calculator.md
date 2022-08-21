@@ -149,7 +149,6 @@ Some shorthands.
     mkMult(mkPlus(mkLit(1), mkLit(2)), mkPlus(mkLit(3), mkLit(4)));
 
 Now our example look much better - it is just a one-liner.  After the above refactoring, the JSON is nowhere to be seen - this is expected. From now on, we will simply not talk about JSON, and focus on Expr. A conversion from JSON to Expr can be easily written, and we do not even need to work with text, or JSON, to begin with - the above Expr construction is a easy way to test our programs. We can also imagine adding a parser that go straight from text to Expr lateron - we dont have to do it now, our time is better spent focusing on compiler itself.
-
   
     static int eval(Expr expr) {  
       if (expr instanceof Lit) {  
@@ -424,11 +423,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
-g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
-LC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNT
-QxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3Njgw
-MTIyLC0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2NzA0Nj
-EsLTU3NjE0NzU4Myw2NzY0NTM3MzQsLTE4NjYyOTA3NjYsLTQ5
-ODI1NjU4NV19
+eyJoaXN0b3J5IjpbMTYzNDg2OTI5MiwtOTM4NzM2NiwtOTk4Nz
+EwMjA5LC0yMDQxODg1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcs
+LTE4MjU5NzI3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMT
+A5OTQyMTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3
+NTM5NSw1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMj
+ksMTg4ODY3MDQ2MSwtNTc2MTQ3NTgzLDY3NjQ1MzczNCwtMTg2
+NjI5MDc2Nl19
 -->
