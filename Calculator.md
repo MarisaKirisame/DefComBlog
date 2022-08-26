@@ -100,14 +100,14 @@ Handle the recursive case (recurse into the children, and combine the result)...
 If you compare evaluate() to prettyPrint(), you will find that they are almost the same! The biggest difference is that one of them has + as an operator that adds two Int, and one of them has + as "+" the string. 
 
 This is not a coincidence. Think about how we can process program in our calculator language:
- - Given a program in the JSON format, we must retrieve it's type so we can work on it
+ - Given a program in the JSON format, we must retrieve its type so we can work on it
  - For the base case, we can immediately return the correct value
  - For the recursive case, we have to handle the children by recursing
 
-Without any of the three step, the program is incorrect, and cannot be fixed without essentially re-introducing it in. This pattern is thus universal: you will see it again, a lot.
+Without any of the three steps, the program is incorrect, and cannot be fixed without essentially re-introducing it. This pattern is thus universal: you will see it again, a lot.
 
 ## Meta-Language, Object-Language, and the Definitional Interpreter
-Lets step back and reflect on what we had done: in less then 10 lines of code, we had implemented an Interpreter! What is the magic? Before I answer this question, some terminology: when we use a program X to manipulate another program Y, the language X is in, is called the meta-language, and Y's language is the object-language.
+Let's step back and reflect on what we had done: in less then 10 lines of code, we had implemented an Interpreter! What is the magic? Before I answer this question, some terminology: when we use a program X to manipulate another program Y, the language X is in, is called the meta-language, and Y's language is the object-language.
 A definitional interpreter is when we use meta-language's feature to implement the corresponding object-language's feature. In this case, evaluate() is a definitional interpreter, because we use Java's Int to implement Calculator's Int. Definitional interpreters are known for their simplicity, because they essentially does nothing.
 
 However, despite doing nothing, they are very useful. The most straight-forward and popular use of a definitional interpreter is to give new syntax, or to provide eval(), for already-existing features, also known as inventing a novel programming language. We could take a definitional interpreter, and add a new language feature which we actually implement. We could also take a definitional interpreter, add some print to every case, and now we had a tracing debugger. Or, as the quote at the beginning of the chapter dictate, a compiler is also a definitional interpreter but slightly modified. Essentially, a definitional interpreter is a solid foundation, allowing you to make a bunch of modification to it, to get all sort of useful things.
@@ -425,7 +425,7 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTM4MzU4NTE3NSwyMTE4OTgwMzY2LC03Nj
+eyJoaXN0b3J5IjpbMjEwOTAxMzY0MSwyMTE4OTgwMzY2LC03Nj
 EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
 LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
 g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
