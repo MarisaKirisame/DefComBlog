@@ -374,7 +374,7 @@ Some profiling shows that our code is now about 4x as fast, by removing the hash
 
 What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This means accessing objects takes possibly a few orders of magnitude slower than accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects into an array will not help because they are boxed). Furthermore, calling a nonstatic method will do dynamic dispatch, which requires jumping to an unknown place in the code, which will induce pipeline stall which is also very expensive.
 
-However, note that in our calculator language, there is no Object, and there is no dynamic dispatch. So, where are they from? We introduced them by calling the Function returned by again(). This is known as the interpretive overhead (A compiler can still have interpretive overhead, because an interpreter (in this case, JVM Function) might be used to interpret the compiled result.).
+However, note that in our calculator language, there is no Object, and there is no dynamic dispatch. So, where are they from? We introduced them by calling the Function returned by again(). This is known as the interpretive overhead (A compiler can still have interpretive overhead because an interpreter (in this case, JVM Function) might be used to interpret the compiled result.).
 
 To combat this, we can, instead of calling the returned value of again(), find a more efficient method to execute it. We start by using a class, LExpr (LocatedExpr), to store the return of again(), now renamed to located:
 
@@ -382,7 +382,7 @@ To combat this, we can, instead of calling the returned value of again(), find a
       abstract int eval(int[] env);  
     }
 
-located is changed to return anonymous class, instead of anonymous function:
+located is changed to return anonymous class, instead of an anonymous function:
 
     LExpr located(Map<String, Integer> loc) {  
       return new LExpr() {  
@@ -392,7 +392,7 @@ located is changed to return anonymous class, instead of anonymous function:
       };  
     }
 
-OK, back onto the point. What is more efficient then the Java Runtime? The Java Compiler! Instead of turning LExpr into Function, we can turn LExpr into a String, which represent some Java code. We can then compile the java code and execute it.
+OK, back onto the point. What is more efficient than the Java Runtime? The Java Compiler! Instead of turning LExpr into Function, we can turn LExpr into a String, which represents some Java code. We can then compile the java code and execute it.
 
     // In LExpr
     abstract String compile();
@@ -405,7 +405,7 @@ Huh. Look very familiar...
 
     String compile() {return "env[" + idx + "]";}
 
-Isnt this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime. You might recall that this code is also exactly our pp(), which is not a coincidence. PrettyPrinting try to output a representation of the code, which is also what compile() does as oppose to eval(). With compile() coded up we can execute the code 10x as fast then LExpr's eval() - which, keep in mind, is 4x as fast then Expr's eval. So, we achieve a whooping 40x speedup!
+Isn't this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime. You might recall that this code is also exactly our pp(), which is not a coincidence. PrettyPrinting try to output a representation of the code, which is also what compile() does as oppose to eval(). With compile() coded up we can execute the code 10x as fast then LExpr's eval() - which, keep in mind, is 4x as fast then Expr's eval. So, we achieve a whooping 40x speedup!
 
 ## More Refactoring
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTU2ODkwNTc2OSwtMTIyMTYwMzcxMCw4Mj
-U4MzA1OTgsOTEwMTAwNzA1LC0xODcwMTc0ODEzLC0xMzU5NDY4
-MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1MCwzMjUxNDg2OSwtNj
-E5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MTI0NDkzMSwxMjI0ODYy
-MDA3LC00NjY5MTA0Miw4MDgzMzMzNTUsMTIwNDk2NjExOCwtOT
-M4NzM2NiwtOTk4NzEwMjA5LC0yMDQxODg1MDE0LDc1MzIzMTkw
-Nl19
+eyJoaXN0b3J5IjpbLTE0NzQzMzAxMTQsLTU2ODkwNTc2OSwtMT
+IyMTYwMzcxMCw4MjU4MzA1OTgsOTEwMTAwNzA1LC0xODcwMTc0
+ODEzLC0xMzU5NDY4MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1MC
+wzMjUxNDg2OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MTI0
+NDkzMSwxMjI0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUsMT
+IwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxODg1
+MDE0XX0=
 -->
