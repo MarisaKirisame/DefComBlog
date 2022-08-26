@@ -34,11 +34,11 @@ As an example, (1 + 2) * (3 + 4) is written as
         left: {type: "Literal", value: 3}, 
         right: {type: "Literal", value: 4}}}
 
-What a pain in the ass. Even though we don't have a parser, we can still write a pretty-printer: it output the code in a prettier, actually-human readable format.
+What a pain in the ass. Even though we don't have a parser, we can still write a pretty printer: it outputs the code in a prettier, actually human-readable format.
 
 ## Pretty Print
 
-We will write it in Java, cause everyone know Java. I am gonna code it with you, step by step. This is like pair programming.
+We will write it in Java, cause everyone knows Java. I am gonna code it with you, step by step. This is like pair programming.
     
     static String prettyPrint(JSONObject json) {  
       throw new RuntimeException("...");  
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTk2MjM1MDEzLDIxMTg5ODAzNjYsLTc2MT
-I0NDkzMSwxMjI0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUs
-MTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxOD
-g1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODAs
-LTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3LDE1ND
-EzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NSw1Mjc2ODAx
-MjJdfQ==
+eyJoaXN0b3J5IjpbLTQ1NzA1MjIxNCwyMTE4OTgwMzY2LC03Nj
+EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
+LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
+g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
+LC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNT
+QxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3Njgw
+MTIyXX0=
 -->
