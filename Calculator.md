@@ -265,7 +265,7 @@ If we look at our simp(), we will see that it is very much like eval()! If we gi
 
 ## Staging
 
-Ignore the scary title for now. Lets try to make our Interpreter faster. I had increase n from 2 to 4, so we are now multiplying 2 4*4 matrix, and run the eval() in a loop, and profiled the resulting code.
+Ignore the scary title for now. Let's try to make our Interpreter faster. I had increased n from 2 to 4, so we are now multiplying 2 4*4 matrices, and run the eval() in a loop, and profiling the resulting code.
 
     public static void profileEval(int n, int length) {  
       Expr example = getExample(n);  
@@ -275,7 +275,7 @@ Ignore the scary title for now. Lets try to make our Interpreter faster. I had i
       }  
     }
 
-The profiler tell me that most time is spend in Map.get(). Why? What is in a Map?
+The profiler tells me that most time is spent in Map.get(). Why? What is in a Map?
 
 There are multiple ways to implement a Map from String to Int. Most notable examples are search tree, hash map, and a trie.
 However, inorder to lookup a key, they all need to traverse the String to compare/compute the hash/traverse the trie, and look at multiple buckets/nodes to find the value. Looking at multiple places is not good, as it require multiple memory fetch, which may be a cache miss and stall the pipeline, and it also require conditional jump, which may fail the branch predictor and require conditional jump. In short - we will like to look only once. If env is an Array, there are less cache miss as the values are compactly stored, and there are no failed branch prediction because there are no branch.
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE4NzAxNzQ4MTMsLTEzNTk0NjgwNjIsNT
-c4NDU2NzYzLC0xNTQxNTM5MjUwLDMyNTE0ODY5LC02MTk5NDU1
-MjUsMjExODk4MDM2NiwtNzYxMjQ0OTMxLDEyMjQ4NjIwMDcsLT
-Q2NjkxMDQyLDgwODMzMzM1NSwxMjA0OTY2MTE4LC05Mzg3MzY2
-LC05OTg3MTAyMDksLTIwNDE4ODUwMTQsNzUzMjMxOTA2LDYxMD
-IyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0
-NjE1XX0=
+eyJoaXN0b3J5IjpbMTMxODMyNDQ3NSwtMTg3MDE3NDgxMywtMT
+M1OTQ2ODA2Miw1Nzg0NTY3NjMsLTE1NDE1MzkyNTAsMzI1MTQ4
+NjksLTYxOTk0NTUyNSwyMTE4OTgwMzY2LC03NjEyNDQ5MzEsMT
+IyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1LDEyMDQ5NjYx
+MTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NT
+MyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAw
+NDQ2XX0=
 -->
