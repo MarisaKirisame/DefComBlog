@@ -366,13 +366,13 @@ is not what we want: every time the inside function is executed, we are calling 
 
 The case for Var. The lambda perfectly separates the two worlds - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple times). The world is called a stage, and usually, there are two stages: the compile and the run time.
 
-Wait, compile time? We separate our interpreter into two stages, run one stage once and run the next stage multiple times. A compiler also works in two stages, compiling the program once and executes it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
+Wait, compile time? We separate our interpreter into two stages, run one stage once and run the next stage multiple times. A compiler also works in two stages, compiling the program once and executeing it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phases, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
 
-Some profiling show that our code is now about 4x as fast, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer HashMap or any particular Java library call, but time is instead spent during all the recursive call.
+Some profiling shows that our code is now about 4x as fast, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer HashMap or any particular Java library call, but time is instead spent during all the recursive calls.
 
 ## Code Generation
 
-What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This mean accessing objects take possibly a few order of magnitude slower then accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects into an array will not help because they are boxed). Furthermore, calling an nonstatic method will do dynamic dispatch, which require jumping to an unknown place in the code, which will induce pipeline stall which is also very expensive.
+What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This means accessing objects take possibly a few order of magnitude slower then accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects into an array will not help because they are boxed). Furthermore, calling an nonstatic method will do dynamic dispatch, which require jumping to an unknown place in the code, which will induce pipeline stall which is also very expensive.
 
 However, note that in our calculator language, there are no Object, and there are no dynamic dispatch. So, where are they from? We introduced them by calling the Function returned by again(). This is known as the interpretive overhead (A compiler can still have interpretive overhead, because an interpreter (in this case, JVM Function) might be used to interpret the compiled result.).
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTIwNzkxMTkzOTEsLTEyMjE2MDM3MTAsOD
-I1ODMwNTk4LDkxMDEwMDcwNSwtMTg3MDE3NDgxMywtMTM1OTQ2
-ODA2Miw1Nzg0NTY3NjMsLTE1NDE1MzkyNTAsMzI1MTQ4NjksLT
-YxOTk0NTUyNSwyMTE4OTgwMzY2LC03NjEyNDQ5MzEsMTIyNDg2
-MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1LDEyMDQ5NjYxMTgsLT
-kzODczNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NTMyMzE5
-MDZdfQ==
+eyJoaXN0b3J5IjpbLTMzMDkyNzA4LC0xMjIxNjAzNzEwLDgyNT
+gzMDU5OCw5MTAxMDA3MDUsLTE4NzAxNzQ4MTMsLTEzNTk0Njgw
+NjIsNTc4NDU2NzYzLC0xNTQxNTM5MjUwLDMyNTE0ODY5LC02MT
+k5NDU1MjUsMjExODk4MDM2NiwtNzYxMjQ0OTMxLDEyMjQ4NjIw
+MDcsLTQ2NjkxMDQyLDgwODMzMzM1NSwxMjA0OTY2MTE4LC05Mz
+g3MzY2LC05OTg3MTAyMDksLTIwNDE4ODUwMTQsNzUzMjMxOTA2
+XX0=
 -->
