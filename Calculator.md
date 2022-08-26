@@ -278,13 +278,13 @@ Ignore the scary title for now. Let's try to make our Interpreter faster. I had 
 The profiler tells me that most time is spent in `Map.get()`. Why? What is in a Map?
 
 There are multiple ways to implement a Map from String to Int. The most notable examples are search trees, hash maps, and tries.
-However, in order to look up a key, they all need to traverse the String to compare/compute the hash/traverse the trie and look at multiple buckets/nodes to find the value. Looking at multiple places is not good, as it require multiple memory fetch, which may be a cache miss and stall the pipeline, and it also require conditional jump, which may fail the branch predictor and require conditional jump. In short - we will like to look only once. If env is an Array, there are less cache miss as the values are compactly stored, and there are no failed branch prediction because there are no branch.
+However, in order to look up a key, they all need to traverse the String to compare/compute the hash/traverse the trie and look at multiple buckets/nodes to find the value. Looking at multiple places is not good, as it requires multiple memory fetches, which may be a cache miss and stall the pipeline, and it also requires conditional jump, which may fail the branch predictor and require conditional jump. In short - we will like to look only once. If env is an Array, there is fewer cache miss as the values are compactly stored, and there are no failed branch prediction because there is no branch.
 
     // Inside Expr
     abstract int yolo(int[] env);
 
-We will call our new function yolo, because you only look once (into the array).
-The change for Lit, Plus, Mult are all mechanical and not be shown, but we are stuck on Input again: we dont have a way to go from String name, to an index in env! We can fix this, by adding a mapping from String to index as an argument to yolo:
+We will call our new function yolo because you only look once (into the array).
+The change for Lit, Plus, Mult are all mechanical and not be shown, but we are stuck on Input again: we don't have a way to go from String name, to an index in env! We can fix this, by adding a mapping from String to index as an argument to yolo:
 
     // In Expr
     abstract int yolo(Map<String, Integer> loc, int[] env);
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTkyMjM4NzA4LC0xODcwMTc0ODEzLC0xMz
-U5NDY4MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1MCwzMjUxNDg2
-OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MTI0NDkzMSwxMj
-I0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUsMTIwNDk2NjEx
-OCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxODg1MDE0LDc1Mz
-IzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODAsLTE1MzI3MDA0
-NDZdfQ==
+eyJoaXN0b3J5IjpbMTExMTY4NTA4MywtMTg3MDE3NDgxMywtMT
+M1OTQ2ODA2Miw1Nzg0NTY3NjMsLTE1NDE1MzkyNTAsMzI1MTQ4
+NjksLTYxOTk0NTUyNSwyMTE4OTgwMzY2LC03NjEyNDQ5MzEsMT
+IyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1LDEyMDQ5NjYx
+MTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NT
+MyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAw
+NDQ2XX0=
 -->
