@@ -184,7 +184,7 @@ Alas, we can't write a compiler yet, as our language is so trivial a compiler is
 
 Right now our language is really, really boring. It reacts the same (output a constant number) no matter what, while most program behaves differently according to the context.
 
-The easiest way to do this is to add variables to the language. For now, for the sake of complexity, all variables are defined externally, inputted by the user when the program is ran. We will add defining and assigning to variable some other times.
+The easiest way to do this is to add variables to the language. For now, for the sake of complexity, all variables are defined externally and inputted by the user when the program run. We will add defining and assigning to variables some other times.
 
     static class Var extends Expr {  
       String name;  
@@ -199,7 +199,7 @@ OK. On to eval(). Hmm...
       throw new RuntimeException("...");
     }
 
-What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we dont know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in a Mapping, environment(env) from variable to int. 
+What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we don't know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in a Mapping, environment(env) from variable to int. 
 
     // In Expr
     abstract int eval(Map<String, Integer> env);
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTc4NDU2NzYzLC0xNTQxNTM5MjUwLDMyNT
-E0ODY5LC02MTk5NDU1MjUsMjExODk4MDM2NiwtNzYxMjQ0OTMx
-LDEyMjQ4NjIwMDcsLTQ2NjkxMDQyLDgwODMzMzM1NSwxMjA0OT
-Y2MTE4LC05Mzg3MzY2LC05OTg3MTAyMDksLTIwNDE4ODUwMTQs
-NzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMj
-cwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0
-NF19
+eyJoaXN0b3J5IjpbLTE5MTM1MDYyNDQsNTc4NDU2NzYzLC0xNT
+QxNTM5MjUwLDMyNTE0ODY5LC02MTk5NDU1MjUsMjExODk4MDM2
+NiwtNzYxMjQ0OTMxLDEyMjQ4NjIwMDcsLTQ2NjkxMDQyLDgwOD
+MzMzM1NSwxMjA0OTY2MTE4LC05Mzg3MzY2LC05OTg3MTAyMDks
+LTIwNDE4ODUwMTQsNzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNT
+k3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIx
+NTddfQ==
 -->
