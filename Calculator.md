@@ -12,13 +12,11 @@ JSON. To be precise, the source code of the program is a JSON file. By doing so,
 
 OK. What feature should it have?
 
-Almost none. The more feature a language have, the harder it is to design and implement. To ease such a task, we will be doing, essentially, agile development. We will design a simple language, write the compiler, refactor the code, add more feature to the language and repeat. This way, the learning curve will be smoother, and you get to see the conflict between different programming language features, and the conflict between performance and expressivity, as the language evolve.
+Almost none. The more feature a language have, the harder it is to design and implement. To ease such a task, we will be doing, essentially, agile development. We will design and implement a simple language, refactor the code, add more feature to the language and repeat. This way, the learning curve will be smoother, and you get to see the conflict between different programming language features, and the conflict between performance and expressivity, as the language evolve.
 
-## Enough talking! Let's get to the action!
+## Language Definition
 
-Alright, alright, chill. 
-
-We shall begin with a language so simple, your (non-scientific) calculator will laugh at it. It has exactly three features: number (an integer), plus (add two number), and multiply (time two number).
+Our language is so simple that your (non-scientific) calculator will laugh at it. It has exactly three features: number (an integer), plus (add two number), and multiply (time two number).
 
 Now we have to specify the JSON format for our program.
 
@@ -423,11 +421,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNTI2NzkzNzU5LC00NjY5MTA0Miw4MDgzMz
-MzNTUsMTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0y
-MDQxODg1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5Nz
-I3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3
-LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NSw1Mj
-c2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3
-MDQ2MV19
+eyJoaXN0b3J5IjpbMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4Mz
+MzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwt
+MjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OT
+cyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1
+NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNT
+I3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2
+NzA0NjFdfQ==
 -->
