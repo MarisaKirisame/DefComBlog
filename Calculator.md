@@ -59,7 +59,7 @@ Literal is easy - we just print the value:
 
         case "Literal" -> String.valueOf(j.getInt("value"));  
 
-Unlike Literal, Plus and Multiply contain more JSON as children, in left and right field, which we have to handle by calling prettyPrint() again - recursion! 
+Unlike Literal, Plus and Multiply contain more JSON as children, in the left and right fields, which we have to handle by calling prettyPrint() again - recursion! 
 
         case "Plus" -> "(" + prettyPrint(j.getJSONObject("left")) +  
           "+" + prettyPrint(j.getJSONObject("right")) + ")";  
@@ -70,7 +70,7 @@ Now calling prettyPrint() on our example return "((1+2)*(3+4))". Look pretty nea
 
 ## Evaluate
 
-Moving on to the evaluator, which take a JSON, and return an Int:
+Moving on to the evaluator, which takes a JSON, and returns an Int:
 
     static int evaluate(JSONObject j) {  
       throw new RuntimeException("...");    
@@ -97,7 +97,7 @@ Handle the recursive case (recurse into the children, and combine the result)...
         case "Plus" -> evaluate(j.getJSONObject("left")) + evaluate(j.getJSONObject("right"));  
         case "Multiply" -> evaluate(j.getJSONObject("left")) * evaluate(j.getJSONObject("right"));  
 
-If you compare evaluate() to prettyPrint(), you will find that they are almost the same! The biggest difference is that one of them have + as an operator that add two Int, and one of them have + as "+" the string. 
+If you compare evaluate() to prettyPrint(), you will find that they are almost the same! The biggest difference is that one of them has + as an operator that adds two Int, and one of them has + as "+" the string. 
 
 This is not a coincidence. Think about how we can process program in our calculator language:
  - Given a program in the JSON format, we must retrieve it's type so we can work on it
@@ -425,7 +425,7 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ1NzA1MjIxNCwyMTE4OTgwMzY2LC03Nj
+eyJoaXN0b3J5IjpbMTM4MzU4NTE3NSwyMTE4OTgwMzY2LC03Nj
 EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
 LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
 g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
