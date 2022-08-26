@@ -110,10 +110,10 @@ Without any of the three steps, the program is incorrect, and cannot be fixed wi
 Let's step back and reflect on what we had done: in less than 10 lines of code, we had implemented an Interpreter! What is the magic? Before I answer this question, some terminology: when we use a program X to manipulate another program Y, the language X is in, is called the metalanguage, and Y's language is the objectlanguage.
 A definitional interpreter is when we use metalanguage's feature to implement the corresponding objectlanguage's feature. In this case, evaluate() is a definitional interpreter, because we use Java's Int to implement Calculator's Int. Definitional interpreters are known for their simplicity because they essentially do nothing.
 
-However, despite doing nothing, they are very useful. The most straightforward and popular use of a definitional interpreter is to give new syntax or to provide eval(), for already-existing features, also known as inventing a novel programming language. We could take a definitional interpreter, and add a new language feature that we actually implement. We could also take a definitional interpreter, add some print to every case, and now we had a tracing debugger. Or, as the quote at the beginning of the chapter dictate, a compiler is also a definitional interpreter but slightly modified. Essentially, a definitional interpreter is a solid foundation, allowing you to make a bunch of modifications to it, to get all sort of useful things.
+However, despite doing nothing, they are very useful. The most straightforward and popular use of a definitional interpreter is to give new syntax or to provide eval(), for already-existing features, also known as inventing a novel programming language. We could take a definitional interpreter, and add a new language feature that we actually implement. We could also take a definitional interpreter, add some print to every case, and now we had a tracing debugger. Or, as the quote at the beginning of the chapter dictate, a compiler is also a definitional interpreter but slightly modified. Essentially, a definitional interpreter is a solid foundation, allowing you to make a bunch of modifications to it, to get all sorts of useful things.
 
 ## Refactoring
-Manipulating JSON is hard! I have to remember the name and the type of everything, and that sure is tiresome! I am gonna refactor the JSON (JavaScript object) into Java Objects, since we are writing Java not JavaScript.
+Manipulating JSON is hard! I have to remember the name and the type of everything, and that sure is tiresome! I am gonna refactor the JSON (JavaScript object) into Java Objects since we are writing Java not JavaScript.
 
     static class Expr {}  
   
@@ -146,7 +146,7 @@ Some shorthands.
 
     mkMult(mkPlus(mkLit(1), mkLit(2)), mkPlus(mkLit(3), mkLit(4)));
 
-Now our example look much better - it is just a one-liner.
+Now our example looks much better - it is just a one-liner.
 
 After the above refactoring, beside the conversion, the JSON is nowhere to be seen - this is expected. From now on, we will simply not talk about JSON, and focus on Expr. A conversion from JSON to Expr can be easily written, by recursing on the JSON object, and emitting the corresponding Java object. And we do not even need to work with text, or JSON, to begin with - the above Expr construction is a easy way to test our programs. We can also imagine adding a parser that go straight from text to Expr lateron - we dont have to do it now, our time is better spent focusing on compiler itself.
   
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5ODU5NDAxNzEsMjExODk4MDM2NiwtNz
-YxMjQ0OTMxLDEyMjQ4NjIwMDcsLTQ2NjkxMDQyLDgwODMzMzM1
-NSwxMjA0OTY2MTE4LC05Mzg3MzY2LC05OTg3MTAyMDksLTIwND
-E4ODUwMTQsNzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4
-MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMT
-U0MTM1NDc0NCwtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LDUyNzY4
-MDEyMl19
+eyJoaXN0b3J5IjpbLTYxOTk0NTUyNSwyMTE4OTgwMzY2LC03Nj
+EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
+LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
+g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
+LC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNT
+QxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3Njgw
+MTIyXX0=
 -->
