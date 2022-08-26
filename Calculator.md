@@ -409,7 +409,7 @@ Isnt this just the code for eval(), our definitional interpreter, only you put i
 
 ## More Refactoring
 
-The code for Plus and Mult has way, way too much similarity. We can refactor them into an ApplyBinOp class, which has two children, left and right, alongside a BinOp, an abstract class, with the function `abstract int eval(int left, int right)`. The code for Plus and Mult is now merged, with the only difference being they use different BinOp.
+The code for Plus and Mult has way, way too much similarity. We can refactor them into an ApplyBinOp class, which has two children, left and right, alongside a BinOp, an abstract class, with the function `abstract int eval(int left, int right)`. The code for Plus and Mult is now merged, with the only difference being they use different BinOp. While this doesnt seems to save too much code, 
 
 ## Conclusion
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExODk4MDM2NiwtNzYxMjQ0OTMxLDEyMj
-Q4NjIwMDcsLTQ2NjkxMDQyLDgwODMzMzM1NSwxMjA0OTY2MTE4
-LC05Mzg3MzY2LC05OTg3MTAyMDksLTIwNDE4ODUwMTQsNzUzMj
-MxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMjcwMDQ0
-NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0NCwtMj
-M4NTE1OTA1LC0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMTcxMzAz
-NzY0NF19
+eyJoaXN0b3J5IjpbLTEyNDk0MjIwNSwyMTE4OTgwMzY2LC03Nj
+EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
+LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
+g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
+LC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNT
+QxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3Njgw
+MTIyXX0=
 -->
