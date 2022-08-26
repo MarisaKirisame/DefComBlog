@@ -333,17 +333,17 @@ This isn't any faster. Duh - we are still calling .get(name) inside yolo(), but 
     int idx = loc.get(name);  
     return env[idx];  
 
-One thing to note is that the code has two lines. One line uses only loc, and one line uses env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user. If we have an Expr, which will be run multiple times, we can execute `int idx = loc.get(name);` only once, store the result, and only execute `return env[idx];` everytime we run the Expr. This way, we will spend some time when we get the Expr, to precompute index, but then we will be very fast!
+One thing to note is that the code has two lines. One line uses only loc, and one line uses env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user. If we have an Expr, which will be run multiple times, we can execute `int idx = loc.get(name);` only once, store the result, and only execute `return env[idx];` every time we run the Expr. This way, we will spend some time when we get the Expr, to precompute indexes, but then we will be very fast!
 
     // In Expr
     abstract Function<int[], Integer> again(Map<String, Integer> loc);
 
-We can represent it by a Function returning a Function. The idea is, for the same Expr, we will call again once, but we can call the result multiple time, each time representing a run of the program.
+We can represent it by a Function returning a Function. The idea is, for the same Expr, we will call again once, but we can call the result multiple times, each time representing a run of the program.
 
     // In Lit
     Function<int[], Integer> again(Map<String, Integer> loc) {return env -> val;}
 
-The case for Lit is simple. We return a Function, which take env and ignore it. It is just like the old yolo() function.
+The case for Lit is simple. We return a Function, which takes env and ignores it. It is just like the old yolo() function.
 
     // In Plus
     Function<int[], Integer> again(Map<String, Integer> loc) {  
@@ -356,7 +356,7 @@ In Plus, we recurse, just as always. One important thing to notice in this code:
 
     return env -> left.again(loc).apply(env) + right.again(loc).apply(env);
  
-is not what we want: everytime the inside function is executed, we are calling again() again, but we only want to call again() once.
+is not what we want: every time the inside function is executed, we are calling again() again, but we only want to call again() once.
 
     // In Var
     Function<int[], Integer> again(Map<String, Integer> loc) {  
@@ -364,7 +364,7 @@ is not what we want: everytime the inside function is executed, we are calling a
       return env -> env[idx];  
     }
 
-The case for Var. The lambda perfectly separate the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
+The case for Var. The lambda perfectly separates the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
 
 Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNDEzMDA3NDYsOTEwMTAwNzA1LC0xODcwMT
-c0ODEzLC0xMzU5NDY4MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1
-MCwzMjUxNDg2OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MT
-I0NDkzMSwxMjI0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUs
-MTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxOD
-g1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODBd
-fQ==
+eyJoaXN0b3J5IjpbODI1ODMwNTk4LDkxMDEwMDcwNSwtMTg3MD
+E3NDgxMywtMTM1OTQ2ODA2Miw1Nzg0NTY3NjMsLTE1NDE1Mzky
+NTAsMzI1MTQ4NjksLTYxOTk0NTUyNSwyMTE4OTgwMzY2LC03Nj
+EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
+LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
+g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
+XX0=
 -->
