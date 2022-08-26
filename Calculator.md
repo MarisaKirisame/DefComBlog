@@ -164,7 +164,7 @@ After the above refactoring, besides the conversion, the JSON is nowhere to be s
 
 We have to now fix the definition for prettyPrint() and evaluate(). While we are at it, let's also move prettyPrint() into Java's toString(), and rename evaluate() into eval(): our code is, and will, remain short and concise. The code for pp(), likewise, is a mechanical transformation, which we will skip presenting.
 
-One problem with the above code, is that it rely heavily on instanceof, and downcasting, which is frown upon in Java. This could be fixed by making pp() and eval() abstract function in Expr, and have each subclass override it.
+One problem with the above code is that it relies heavily on instanceof, and downcasting, which is frowned upon in Java. This could be fixed by making pp() and eval() abstract functions in Expr, and having each subclass override it.
 
     // In Lit
     public String toString() {return String.valueOf(val);}  
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMzI1MTQ4NjksLTYxOTk0NTUyNSwyMTE4OT
-gwMzY2LC03NjEyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIs
-ODA4MzMzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMD
-IwOSwtMjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0x
-ODI1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOT
-k0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUz
-OTVdfQ==
+eyJoaXN0b3J5IjpbLTE1NDE1MzkyNTAsMzI1MTQ4NjksLTYxOT
+k0NTUyNSwyMTE4OTgwMzY2LC03NjEyNDQ5MzEsMTIyNDg2MjAw
+NywtNDY2OTEwNDIsODA4MzMzMzU1LDEyMDQ5NjYxMTgsLTkzOD
+czNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NTMyMzE5MDYs
+NjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0OD
+IzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5
+MDVdfQ==
 -->
