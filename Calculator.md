@@ -12,11 +12,11 @@ JSON. To be precise, the source code of the program is a JSON file. By doing so,
 
 OK. What feature should it have?
 
-Almost none. The more feature a language has, the harder it is to design and implement. To ease such a task, we will be doing, essentially, agile development. We will design and implement a simple language, refactor the code, add more feature to the language and repeat. This way, the learning curve will be smoother, and you get to see the conflict between different programming language features, and the conflict between performance and expressivity, as the language evolve.
+Almost none. The more features a language has, the harder it is to design and implement. To ease such a task, we will be doing, essentially, agile development. We will design and implement a simple language, refactor the code, add more features to the language, and repeat. This way, the learning curve will be smoother, and you get to see the conflict between different programming language features, and the conflict between performance and expressivity, as the language evolves.
 
 ## Language Definition
 
-Our language is so simple that your (non-scientific) calculator will laugh at it. It has exactly three features: number (an integer), plus (add two number), and multiply (time two number).
+Our language is so simple that your (non-scientific) calculator will laugh at it. It has exactly three features: number (an integer), plus (add two numbers), and multiply (time two numbers).
 
 Now we have to specify the JSON format for our program.
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTE5NTk2NzExNiwyMTE4OTgwMzY2LC03Nj
-EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
-LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
-g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
-LC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNT
-QxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3Njgw
-MTIyXX0=
+eyJoaXN0b3J5IjpbNTk2MjM1MDEzLDIxMTg5ODAzNjYsLTc2MT
+I0NDkzMSwxMjI0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUs
+MTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxOD
+g1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODAs
+LTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3LDE1ND
+EzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NSw1Mjc2ODAx
+MjJdfQ==
 -->
