@@ -229,7 +229,7 @@ Let's get back to programming, and fill out the case for Plus.
     Expr right = this.right.simp();
     return mkPlus(left, right);
 
-We begin by traversing left and right, simplifying them. Note that the above code is universal - we can also do this for the simpl() for Mult (of course, we have to change mkPlus into mkMult). This is because if a == and b == y, mkPlus(a, b) == mkPlus(x, y). Even when we have nothing to do for a Node, we can and should still optimize by recursing. This way its children can do it's things. Now, onto some real optimization for Plus.
+We begin by traversing left and right, simplifying them. Note that the above code is universal - we can also do this for the simp() for Mult (of course, we have to change mkPlus into mkMult). This is because if a == and b == y, mkPlus(a, b) == mkPlus(x, y). Even when we have nothing to do for a Node, we can and should still optimize by recursing. This way its children can do its things. Now, onto some real optimization for Plus.
 
       // After left, right is defined, before mkPlus
       if (left.equals(Cal.mkLit(0))) {  
@@ -238,7 +238,7 @@ We begin by traversing left and right, simplifying them. Note that the above cod
         return left;  
       }
 
-If left or right is 0, we just return the other Expr. Note that I had override equals for all the Expr. I wont show them because they are not interesting, but you can see them in the code. Another case:
+If left or right is 0, we just return the other Expr. Note that I had override equals for all the Expr. I won't show them because they are not interesting, but you can see them in the code. Another case:
 
     // After left, right is defined, before mkPlus
     if (left instanceof Lit && right instanceof Lit) {  
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEzNTk0NjgwNjIsNTc4NDU2NzYzLC0xNT
-QxNTM5MjUwLDMyNTE0ODY5LC02MTk5NDU1MjUsMjExODk4MDM2
-NiwtNzYxMjQ0OTMxLDEyMjQ4NjIwMDcsLTQ2NjkxMDQyLDgwOD
-MzMzM1NSwxMjA0OTY2MTE4LC05Mzg3MzY2LC05OTg3MTAyMDks
-LTIwNDE4ODUwMTQsNzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNT
-k3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIx
-NTddfQ==
+eyJoaXN0b3J5IjpbLTE1NTgzOTQwMCwtMTM1OTQ2ODA2Miw1Nz
+g0NTY3NjMsLTE1NDE1MzkyNTAsMzI1MTQ4NjksLTYxOTk0NTUy
+NSwyMTE4OTgwMzY2LC03NjEyNDQ5MzEsMTIyNDg2MjAwNywtND
+Y2OTEwNDIsODA4MzMzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYs
+LTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMj
+I0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2
+MTVdfQ==
 -->
