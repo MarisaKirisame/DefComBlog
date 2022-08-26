@@ -199,12 +199,12 @@ OK. On to eval(). Hmm...
       throw new RuntimeException("...");
     }
 
-What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we don't know which value they are. Luckily, they are all user-defined variable, so we can require our user pass in a Mapping, environment(env) from variable to int. 
+What do I put in here? Seems like we are stuck! For a good reason: we now have unknown variables in our language, but we don't know which value they are. Luckily, they are all user-defined variables, so we can require our user to pass in a Mapping, environment(env) from variable to int. 
 
     // In Expr
     abstract int eval(Map<String, Integer> env);
 
-Now our definitions for Lit, Plus and Mult are broken. We can fix Lit by accepting the env and doing nothing for it. For Plus and Mult, we pass env into the recursive call. 
+Now our definitions for Lit, Plus, and Mult are broken. We can fix Lit by accepting the env and doing nothing for it. For Plus and Mult, we pass env into the recursive call. 
 
     int eval(Map<String, Integer> env) {return env.get(name);}
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE5MTM1MDYyNDQsNTc4NDU2NzYzLC0xNT
-QxNTM5MjUwLDMyNTE0ODY5LC02MTk5NDU1MjUsMjExODk4MDM2
-NiwtNzYxMjQ0OTMxLDEyMjQ4NjIwMDcsLTQ2NjkxMDQyLDgwOD
-MzMzM1NSwxMjA0OTY2MTE4LC05Mzg3MzY2LC05OTg3MTAyMDks
-LTIwNDE4ODUwMTQsNzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNT
-k3Mjc4MCwtMTUzMjcwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIx
-NTddfQ==
+eyJoaXN0b3J5IjpbNzM3ODcwNTMwLDU3ODQ1Njc2MywtMTU0MT
+UzOTI1MCwzMjUxNDg2OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYs
+LTc2MTI0NDkzMSwxMjI0ODYyMDA3LC00NjY5MTA0Miw4MDgzMz
+MzNTUsMTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0y
+MDQxODg1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5Nz
+I3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3
+XX0=
 -->
