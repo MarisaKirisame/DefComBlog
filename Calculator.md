@@ -2,17 +2,17 @@
 
 > A compiler is just a staged definitional interpreter. What's the problem?
 
-Dont worry about the above quote. Let's design a programming language, and write a compiler for it!
+Don't worry about the above quote. Let's design a programming language, and write a compiler for it!
 
 ## Design
 
 What should the language look like? 
 
-JSON. To be precise, the source code of the program is a JSON file. By doing so, we do not need to parse the program from a textual format - it is already done. Even though parsing make your program look nice (because it is not in JSON), and parsing is deep and useful knowledge, we will completely skip parsing: it is very complex, and if we talk about it, we will spend most of our time talking about it, leaving little time for everything else. 
+JSON. To be precise, the source code of the program is a JSON file. By doing so, we do not need to parse the program from a textual format - it is already done. Even though parsing makes your program look nice (because it is not in JSON), and parsing is deep and useful knowledge, we will completely skip parsing: it is very complex, and if we talk about it, we will spend most of our time talking about it, leaving little time for everything else. 
 
 OK. What feature should it have?
 
-Almost none. The more feature a language have, the harder it is to design and implement. To ease such a task, we will be doing, essentially, agile development. We will design and implement a simple language, refactor the code, add more feature to the language and repeat. This way, the learning curve will be smoother, and you get to see the conflict between different programming language features, and the conflict between performance and expressivity, as the language evolve.
+Almost none. The more feature a language has, the harder it is to design and implement. To ease such a task, we will be doing, essentially, agile development. We will design and implement a simple language, refactor the code, add more feature to the language and repeat. This way, the learning curve will be smoother, and you get to see the conflict between different programming language features, and the conflict between performance and expressivity, as the language evolve.
 
 ## Language Definition
 
@@ -425,7 +425,7 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMjExODk4MDM2NiwyMTE4OTgwMzY2LC03Nj
+eyJoaXN0b3J5IjpbMTE5NTk2NzExNiwyMTE4OTgwMzY2LC03Nj
 EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
 LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
 g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
