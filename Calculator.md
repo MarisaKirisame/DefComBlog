@@ -364,7 +364,7 @@ is not what we want: every time the inside function is executed, we are calling 
       return env -> env[idx];  
     }
 
-The case for Var. The lambda perfectly separates the two world - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple time). The world is called stage, and usually there is two stage: the compile and the run time.
+The case for Var. The lambda perfectly separates the two worlds - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple times). The world is called a stage, and usually there is two stages: the compile and the run time.
 
 Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbODI1ODMwNTk4LDkxMDEwMDcwNSwtMTg3MD
-E3NDgxMywtMTM1OTQ2ODA2Miw1Nzg0NTY3NjMsLTE1NDE1Mzky
-NTAsMzI1MTQ4NjksLTYxOTk0NTUyNSwyMTE4OTgwMzY2LC03Nj
-EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
-LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
-g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
-XX0=
+eyJoaXN0b3J5IjpbNTM0MzMwNzg0LDgyNTgzMDU5OCw5MTAxMD
+A3MDUsLTE4NzAxNzQ4MTMsLTEzNTk0NjgwNjIsNTc4NDU2NzYz
+LC0xNTQxNTM5MjUwLDMyNTE0ODY5LC02MTk5NDU1MjUsMjExOD
+k4MDM2NiwtNzYxMjQ0OTMxLDEyMjQ4NjIwMDcsLTQ2NjkxMDQy
+LDgwODMzMzM1NSwxMjA0OTY2MTE4LC05Mzg3MzY2LC05OTg3MT
+AyMDksLTIwNDE4ODUwMTQsNzUzMjMxOTA2LDYxMDIyNDY1N119
+
 -->
