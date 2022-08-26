@@ -372,9 +372,9 @@ Some profiling shows that our code is now about 4x as fast, by removing the hash
 
 ## Code Generation
 
-What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This means accessing objects take possibly a few order of magnitude slower then accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects into an array will not help because they are boxed). Furthermore, calling an nonstatic method will do dynamic dispatch, which require jumping to an unknown place in the code, which will induce pipeline stall which is also very expensive.
+What else is there to optimize? To understand this, we have to understand that calling a nonstatic method in Java is somewhat slow, as opposed to e.g. indexing into an array, or doing int addition. Objects, unlike int in an array, are not tightly packed together (on the heap). This means accessing objects takes possibly a few orders of magnitude slower than accessing local variables (on the stack), or sequential access to an array. (And no, putting Objects into an array will not help because they are boxed). Furthermore, calling a nonstatic method will do dynamic dispatch, which requires jumping to an unknown place in the code, which will induce pipeline stall which is also very expensive.
 
-However, note that in our calculator language, there are no Object, and there are no dynamic dispatch. So, where are they from? We introduced them by calling the Function returned by again(). This is known as the interpretive overhead (A compiler can still have interpretive overhead, because an interpreter (in this case, JVM Function) might be used to interpret the compiled result.).
+However, note that in our calculator language, there is no Object, and there is no dynamic dispatch. So, where are they from? We introduced them by calling the Function returned by again(). This is known as the interpretive overhead (A compiler can still have interpretive overhead, because an interpreter (in this case, JVM Function) might be used to interpret the compiled result.).
 
 To combat this, we can, instead of calling the returned value of again(), find a more efficient method to execute it. We start by using a class, LExpr (LocatedExpr), to store the return of again(), now renamed to located:
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTMzMDkyNzA4LC0xMjIxNjAzNzEwLDgyNT
-gzMDU5OCw5MTAxMDA3MDUsLTE4NzAxNzQ4MTMsLTEzNTk0Njgw
-NjIsNTc4NDU2NzYzLC0xNTQxNTM5MjUwLDMyNTE0ODY5LC02MT
-k5NDU1MjUsMjExODk4MDM2NiwtNzYxMjQ0OTMxLDEyMjQ4NjIw
-MDcsLTQ2NjkxMDQyLDgwODMzMzM1NSwxMjA0OTY2MTE4LC05Mz
-g3MzY2LC05OTg3MTAyMDksLTIwNDE4ODUwMTQsNzUzMjMxOTA2
-XX0=
+eyJoaXN0b3J5IjpbLTU2ODkwNTc2OSwtMTIyMTYwMzcxMCw4Mj
+U4MzA1OTgsOTEwMTAwNzA1LC0xODcwMTc0ODEzLC0xMzU5NDY4
+MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1MCwzMjUxNDg2OSwtNj
+E5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MTI0NDkzMSwxMjI0ODYy
+MDA3LC00NjY5MTA0Miw4MDgzMzMzNTUsMTIwNDk2NjExOCwtOT
+M4NzM2NiwtOTk4NzEwMjA5LC0yMDQxODg1MDE0LDc1MzIzMTkw
+Nl19
 -->
