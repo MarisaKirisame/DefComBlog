@@ -407,6 +407,8 @@ Huh. Look very familiar...
 
 Isnt this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime. You might recall that this code is also exactly our pp(), which is not a coincidence. PrettyPrinting try to output a representation of the code, which is also what compile() does as oppose to eval(). With compile() coded up we can execute the code 10x as fast then LExpr's eval() - which, keep in mind, is 4x as fast then Expr's eval. So, we achieve a whooping 40x speedup!
 
+## More Refactoring
+
 ## Conclusion
 
 If you want a 1-day intro to compiler, this is it. Stop reading.
@@ -421,11 +423,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4Mz
-MzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwt
-MjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OT
-cyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1
-NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNT
-I3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2
-NzA0NjFdfQ==
+eyJoaXN0b3J5IjpbMTk0NTUwMTQyNiwxMjI0ODYyMDA3LC00Nj
+Y5MTA0Miw4MDgzMzMzNTUsMTIwNDk2NjExOCwtOTM4NzM2Niwt
+OTk4NzEwMjA5LC0yMDQxODg1MDE0LDc1MzIzMTkwNiw2MTAyMj
+Q2NTcsLTE4MjU5NzI3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYx
+NSwtMTA5OTQyMTU3LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMT
+gxNDQ3NTM5NSw1Mjc2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5
+MDcwMjldfQ==
 -->
