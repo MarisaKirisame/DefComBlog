@@ -405,7 +405,7 @@ Huh. Look very familiar...
 
     String compile() {return "env[" + idx + "]";}
 
-Isn't this just the code for eval(), our definitional interpreter, only you put it in quotation mark? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime. You might recall that this code is also exactly our pp(), which is not a coincidence. PrettyPrinting try to output a representation of the code, which is also what compile() does as oppose to eval(). With compile() coded up we can execute the code 10x as fast then LExpr's eval() - which, keep in mind, is 4x as fast then Expr's eval. So, we achieve a whooping 40x speedup!
+Isn't this just the code for eval(), our definitional interpreter, only you put it in quotation marks? Precisely. This is called quoting, where we, instead of executing a code, just store the representation of that code, so we can do stuff with it later. Again, note how we are using Java's feature to implement Calculator's feature, only this time, we use the Java compiler instead of the Java runtime. You might recall that this code is also exactly our pp(), which is not a coincidence. PrettyPrinting  output a representation of the code, which is also what compile() does as oppose to eval(). With compile() coded up we can execute the code 10x as fast then LExpr's eval() - which, keep in mind, is 4x as fast then Expr's eval. So, we achieve a whooping 40x speedup!
 
 ## More Refactoring
 
@@ -414,9 +414,9 @@ The code for Plus and Mult has way, way too much similarity. We can refactor the
 ## Conclusion
 
 If you want a 1-day intro to compiler, this is it. Stop reading.
-This chapter is a microcosm of the whole book: It contain programming language design, evaluation, performance debugging by profiling and reasoning about hardware, optimization, staging, and finally code generation, with all of them interacting with the definitional interpreter. The rest of the book is an extension of all we seen before, only in more depth.
+This chapter is a microcosm of the whole book: It contains programming language design, evaluation, performance debugging by profiling and reasoning about hardware, optimization, staging, and finally code generation, with all of them interacting with the definitional interpreter. The rest of the book is an extension of all we saw before, only in more depth.
 
-After all, a compiler isn't a menacing dragon, to be conquered by knight, but a dragon-friend, whom once you befriend with, will be amazed by its beauty.
+After all, a compiler isn't a menacing dragon, to be conquered by a knight, but a dragon-friend, whom once you befriend, will be amazed by its beauty.
 
 ## Challenge
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE0NzQzMzAxMTQsLTU2ODkwNTc2OSwtMT
-IyMTYwMzcxMCw4MjU4MzA1OTgsOTEwMTAwNzA1LC0xODcwMTc0
-ODEzLC0xMzU5NDY4MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1MC
-wzMjUxNDg2OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MTI0
-NDkzMSwxMjI0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUsMT
-IwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxODg1
-MDE0XX0=
+eyJoaXN0b3J5IjpbMTc1MjY1NzU0OSwtMTQ3NDMzMDExNCwtNT
+Y4OTA1NzY5LC0xMjIxNjAzNzEwLDgyNTgzMDU5OCw5MTAxMDA3
+MDUsLTE4NzAxNzQ4MTMsLTEzNTk0NjgwNjIsNTc4NDU2NzYzLC
+0xNTQxNTM5MjUwLDMyNTE0ODY5LC02MTk5NDU1MjUsMjExODk4
+MDM2NiwtNzYxMjQ0OTMxLDEyMjQ4NjIwMDcsLTQ2NjkxMDQyLD
+gwODMzMzM1NSwxMjA0OTY2MTE4LC05Mzg3MzY2LC05OTg3MTAy
+MDldfQ==
 -->
