@@ -265,10 +265,6 @@ Now calling example.simp().pp() will give a string of length 126, as opposed to 
 
 If we look at our simp(), we will see that it is very much like eval()! In fact, if we give it an Expr with no Var in it, it will always return a Lit! And the code that will be executed, in that case, is exactly the code for a definitional Interpreter. This is not a coincidence: the definitional Interpreter is a recurring echo, which we will see multi, multiple of time in the book.
 
-## Call Me Maybe
-
-
-
 ## Staging
 
 Ignore the scary title for now. Lets try to make our Interpreter faster. I had increase n from 2 to 4, so we are now multiplying 2 4*4 matrix, and run the eval() in a loop, and profiled the resulting code.
@@ -427,11 +423,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTQ2NjkxMDQyLDgwODMzMzM1NSwxMjA0OT
-Y2MTE4LC05Mzg3MzY2LC05OTg3MTAyMDksLTIwNDE4ODUwMTQs
-NzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMj
-cwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0
-NCwtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMT
-cxMzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYx
-NDc1ODNdfQ==
+eyJoaXN0b3J5IjpbMTQ4MTQ5NTEyNCwtNDY2OTEwNDIsODA4Mz
+MzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwt
+MjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OT
+cyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1
+NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNT
+I3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2
+NzA0NjFdfQ==
 -->
