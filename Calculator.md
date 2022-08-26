@@ -178,7 +178,7 @@ One problem with the above code is that it relies heavily on instanceof, and dow
 
 The @override function for Lit and Plus. The case for Mult is almost the same, so I will not show it here.
 
-Alas, we cant write a compiler yet, as our language is so trivial a compiler is pointless. Let's add some more feature.
+Alas, we can't write a compiler yet, as our language is so trivial a compiler is pointless. Let's add some more features.
 
 ## Input
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTE1NDE1MzkyNTAsMzI1MTQ4NjksLTYxOT
-k0NTUyNSwyMTE4OTgwMzY2LC03NjEyNDQ5MzEsMTIyNDg2MjAw
-NywtNDY2OTEwNDIsODA4MzMzMzU1LDEyMDQ5NjYxMTgsLTkzOD
-czNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NTMyMzE5MDYs
-NjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0OD
-IzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5
-MDVdfQ==
+eyJoaXN0b3J5IjpbLTEzNDk4Mjg2MTgsLTE1NDE1MzkyNTAsMz
+I1MTQ4NjksLTYxOTk0NTUyNSwyMTE4OTgwMzY2LC03NjEyNDQ5
+MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1LDEyMD
+Q5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAx
+NCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNT
+MyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNTQxMzU0
+NzQ0XX0=
 -->
