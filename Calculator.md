@@ -225,8 +225,6 @@ Urgh. What a mess! Look like there is a bunch of 0 in our program. We can write 
     
 The case for Lit and Var is trivial: there is nothing to simplify, so we just `return this;`. In fact, we had moved this code into the base class, Expr, because it is always correct to simplify, by doing nothing!
 
-By correctness, we mean that, given a program X, X.simp() is equal to X. By equality, X and Y are equal, if and only if forall env, X.eval(env) == Y.eval(env). When writing optimizations, this is critical to keep in mind - we dont want to change the meaning of user program!
-
 Let's get back to programming, and fill out the case for Plus.
 
     Expr left = this.left.simp();  
@@ -429,11 +427,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTk3OTI2NjA1OSw4MDgzMzMzNTUsMTIwND
-k2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxODg1MDE0
-LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODAsLTE1Mz
-I3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3LDE1NDEzNTQ3
-NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NSw1Mjc2ODAxMjIsLT
-E3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3MDQ2MSwtNTc2
-MTQ3NTgzXX0=
+eyJoaXN0b3J5IjpbLTQ2NjkxMDQyLDgwODMzMzM1NSwxMjA0OT
+Y2MTE4LC05Mzg3MzY2LC05OTg3MTAyMDksLTIwNDE4ODUwMTQs
+NzUzMjMxOTA2LDYxMDIyNDY1NywtMTgyNTk3Mjc4MCwtMTUzMj
+cwMDQ0NiwxNDgyMzQ0NjE1LC0xMDk5NDIxNTcsMTU0MTM1NDc0
+NCwtMjM4NTE1OTA1LC0xODE0NDc1Mzk1LDUyNzY4MDEyMiwtMT
+cxMzAzNzY0NCwtMTk1MTkwNzAyOSwxODg4NjcwNDYxLC01NzYx
+NDc1ODNdfQ==
 -->
