@@ -328,12 +328,12 @@ Now, a function to turn the old Env into the new Env. Now we can profile our cod
       }  
     }
 
-This isn't any faster. Duh - we are still calling .get(name) inside yolo(), but the point is to not call it! Lets take a moment, to look at yolo() for Var and think.
+This isn't any faster. Duh - we are still calling .get(name) inside yolo(), but the point is to not call it! Let's take a moment to look at yolo() for Var and think.
 
     int idx = loc.get(name);  
     return env[idx];  
 
-One thing to note, is that the code has two line. One line use only loc, and one line use env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user. If we have an Expr, which will be ran multiple time, we can execute `int idx = loc.get(name);` only once, store the result, and only execute `return env[idx];` everytime we run the Expr. This way, we will spend some time when we get the Expr, to precompute index, but then we will be very fast!
+One thing to note is that the code has two lines. One line uses only loc, and one line uses env, alongside the value produced by loc. Furthermore, loc is calculated using Expr only, and env is defined by the user. If we have an Expr, which will be run multiple times, we can execute `int idx = loc.get(name);` only once, store the result, and only execute `return env[idx];` everytime we run the Expr. This way, we will spend some time when we get the Expr, to precompute index, but then we will be very fast!
 
     // In Expr
     abstract Function<int[], Integer> again(Map<String, Integer> loc);
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbOTEwMTAwNzA1LC0xODcwMTc0ODEzLC0xMz
-U5NDY4MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1MCwzMjUxNDg2
-OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MTI0NDkzMSwxMj
-I0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUsMTIwNDk2NjEx
-OCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxODg1MDE0LDc1Mz
-IzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODAsLTE1MzI3MDA0
-NDZdfQ==
+eyJoaXN0b3J5IjpbNDEzMDA3NDYsOTEwMTAwNzA1LC0xODcwMT
+c0ODEzLC0xMzU5NDY4MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1
+MCwzMjUxNDg2OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MT
+I0NDkzMSwxMjI0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUs
+MTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxOD
+g1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODBd
+fQ==
 -->
