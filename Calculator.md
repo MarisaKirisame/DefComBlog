@@ -8,7 +8,7 @@ Dont worry about the above quote. Let's design a programming language, and write
 
 What should the language look like? 
 
-JSON. To be precise, the source code of the program is a JSON file. By doing so, we do not need to parse the program from a textual format - it was already done. Even though parsing make your program look nice (because it is not in JSON), and parsing is deep and useful knowledge, we will completely skip parsing: it is very complex, and if we talk about it, we will spend most of our time talking about it, leaving little time for everything else. 
+JSON. To be precise, the source code of the program is a JSON file. By doing so, we do not need to parse the program from a textual format - it is already done. Even though parsing make your program look nice (because it is not in JSON), and parsing is deep and useful knowledge, we will completely skip parsing: it is very complex, and if we talk about it, we will spend most of our time talking about it, leaving little time for everything else. 
 
 OK. What feature should it have?
 
@@ -423,11 +423,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTQ4MTQ5NTEyNCwtNDY2OTEwNDIsODA4Mz
-MzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwt
-MjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OT
-cyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1
-NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNT
-I3NjgwMTIyLC0xNzEzMDM3NjQ0LC0xOTUxOTA3MDI5LDE4ODg2
-NzA0NjFdfQ==
+eyJoaXN0b3J5IjpbNTI2NzkzNzU5LC00NjY5MTA0Miw4MDgzMz
+MzNTUsMTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0y
+MDQxODg1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5Nz
+I3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3
+LDE1NDEzNTQ3NDQsLTIzODUxNTkwNSwtMTgxNDQ3NTM5NSw1Mj
+c2ODAxMjIsLTE3MTMwMzc2NDQsLTE5NTE5MDcwMjksMTg4ODY3
+MDQ2MV19
 -->
