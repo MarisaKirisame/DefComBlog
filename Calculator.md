@@ -366,7 +366,7 @@ is not what we want: every time the inside function is executed, we are calling 
 
 The case for Var. The lambda perfectly separates the two worlds - a world where we only have loc, but we can do heavy computation (because it is run once), and a world with env, but we want to execute ASAP (because it is run multiple times). The world is called a stage, and usually, there are two stages: the compile and the run time.
 
-Wait, compile time? We separate our interpreter into two stage, run one stage once and run the next stage multiple time. A compiler also work in two stage, compiling the program once and execute it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
+Wait, compile time? We separate our interpreter into two stages, run one stage once and run the next stage multiple times. A compiler also works in two stages, compiling the program once and executes it many time.  But note that our compiler is very much like our definitional interpreter, eval(), the difference only being splitting lookup into two phase, and the stage separation. This is what "A compiler is just a staged definitional interpreter" mean! Hurray! Now we have a compiler with 20 lines of code!
 
 Some profiling show that our code is now about 4x as fast, by removing the hash table lookup at runtime. Some profiling will show that the bottleneck is no longer HashMap or any particular Java library call, but time is instead spent during all the recursive call.
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTEyMjE2MDM3MTAsODI1ODMwNTk4LDkxMD
-EwMDcwNSwtMTg3MDE3NDgxMywtMTM1OTQ2ODA2Miw1Nzg0NTY3
-NjMsLTE1NDE1MzkyNTAsMzI1MTQ4NjksLTYxOTk0NTUyNSwyMT
-E4OTgwMzY2LC03NjEyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEw
-NDIsODA4MzMzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5OD
-cxMDIwOSwtMjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3
-XX0=
+eyJoaXN0b3J5IjpbLTIwNzkxMTkzOTEsLTEyMjE2MDM3MTAsOD
+I1ODMwNTk4LDkxMDEwMDcwNSwtMTg3MDE3NDgxMywtMTM1OTQ2
+ODA2Miw1Nzg0NTY3NjMsLTE1NDE1MzkyNTAsMzI1MTQ4NjksLT
+YxOTk0NTUyNSwyMTE4OTgwMzY2LC03NjEyNDQ5MzEsMTIyNDg2
+MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1LDEyMDQ5NjYxMTgsLT
+kzODczNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NTMyMzE5
+MDZdfQ==
 -->
