@@ -208,9 +208,9 @@ Now our definitions for Lit, Plus, and Mult are broken. We can fix Lit by accept
 
     int eval(Map<String, Integer> env) {return env.get(name);}
 
-Now for Var, we lookup the value from the environment.
+Now for Var, we look up the value from the environment.
 
-Pretty Good! I had wrote another example, which multiply 2 n*n matrix, where n = 2, and add up all the cell in the resulting matrix, into a single number. The code is hidden because it is not too related to what we are doing right now. Running the example on 2 matrix with all cell as 1, will give 8, which is expected. However, printing the matrix will give:
+Pretty Good! I wrote another example, which multiplies 2 n*n matrices, where n = 2, and add up all the cell in the resulting matrix, into a single number. The code is hidden because it is not too related to what we are doing right now. Running the example on 2 matrix with all cell as 1, will give 8, which is expected. However, printing the matrix will give:
 
     ((((0+((0+(a_0_0*b_0_0))+(a_0_1*b_1_0)))+((0+(a_0_0*b_0_1))+(a_0_1*b_1 ...
 
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbNzM3ODcwNTMwLDU3ODQ1Njc2MywtMTU0MT
-UzOTI1MCwzMjUxNDg2OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYs
-LTc2MTI0NDkzMSwxMjI0ODYyMDA3LC00NjY5MTA0Miw4MDgzMz
-MzNTUsMTIwNDk2NjExOCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0y
-MDQxODg1MDE0LDc1MzIzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5Nz
-I3ODAsLTE1MzI3MDA0NDYsMTQ4MjM0NDYxNSwtMTA5OTQyMTU3
-XX0=
+eyJoaXN0b3J5IjpbMTAxMTI3NDk3OCw1Nzg0NTY3NjMsLTE1ND
+E1MzkyNTAsMzI1MTQ4NjksLTYxOTk0NTUyNSwyMTE4OTgwMzY2
+LC03NjEyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4Mz
+MzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwt
+MjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OT
+cyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1
+N119
 -->
