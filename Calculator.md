@@ -284,7 +284,7 @@ However, in order to look up a key, they all need to traverse the String to comp
     abstract int yolo(int[] env);
 
 We will call our new function yolo because you only look once (into the array).
-The change for Lit, Plus, Mult are all mechanical and not be shown, but we are stuck on Input again: we don't have a way to go from String name, to an index in env! We can fix this, by adding a mapping from String to index as an argument to yolo:
+The change for Lit, Plus, Mult are all mechanical and not shown, but we are stuck on Input again: we don't have a way to go from String name to an index in env! We can fix this, by adding a mapping from String to index as an argument to yolo:
 
     // In Expr
     abstract int yolo(Map<String, Integer> loc, int[] env);
@@ -328,7 +328,7 @@ Now, a function to turn the old Env into the new Env. Now we can profile our cod
       }  
     }
 
-This isnt any faster. Duh - we are still calling .get(name) inside yolo(), but the point is to not call it! Lets take a moment, to look at yolo() for Var and think.
+This isn't any faster. Duh - we are still calling .get(name) inside yolo(), but the point is to not call it! Lets take a moment, to look at yolo() for Var and think.
 
     int idx = loc.get(name);  
     return env[idx];  
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbMTExMTY4NTA4MywtMTg3MDE3NDgxMywtMT
-M1OTQ2ODA2Miw1Nzg0NTY3NjMsLTE1NDE1MzkyNTAsMzI1MTQ4
-NjksLTYxOTk0NTUyNSwyMTE4OTgwMzY2LC03NjEyNDQ5MzEsMT
-IyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1LDEyMDQ5NjYx
-MTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MTg4NTAxNCw3NT
-MyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgwLC0xNTMyNzAw
-NDQ2XX0=
+eyJoaXN0b3J5IjpbOTEwMTAwNzA1LC0xODcwMTc0ODEzLC0xMz
+U5NDY4MDYyLDU3ODQ1Njc2MywtMTU0MTUzOTI1MCwzMjUxNDg2
+OSwtNjE5OTQ1NTI1LDIxMTg5ODAzNjYsLTc2MTI0NDkzMSwxMj
+I0ODYyMDA3LC00NjY5MTA0Miw4MDgzMzMzNTUsMTIwNDk2NjEx
+OCwtOTM4NzM2NiwtOTk4NzEwMjA5LC0yMDQxODg1MDE0LDc1Mz
+IzMTkwNiw2MTAyMjQ2NTcsLTE4MjU5NzI3ODAsLTE1MzI3MDA0
+NDZdfQ==
 -->
