@@ -148,7 +148,7 @@ Some shorthands.
 
 Now our example looks much better - it is just a one-liner.
 
-After the above refactoring, beside the conversion, the JSON is nowhere to be seen - this is expected. From now on, we will simply not talk about JSON, and focus on Expr. A conversion from JSON to Expr can be easily written, by recursing on the JSON object, and emitting the corresponding Java object. And we do not even need to work with text, or JSON, to begin with - the above Expr construction is a easy way to test our programs. We can also imagine adding a parser that go straight from text to Expr lateron - we dont have to do it now, our time is better spent focusing on compiler itself.
+After the above refactoring, besides the conversion, the JSON is nowhere to be seen - this is expected. From now on, we will simply not talk about JSON, and focus on Expr. Conversion from JSON to Expr can be easily written, by recursing on the JSON object and emitting the corresponding Java object. And we do not even need to work with text, or JSON, to begin with - the above Expr construction is an easy way to test our programs. We can also imagine adding a parser that goes straight from text to Expr later on - we don't have to do it now, our time is better spent focusing on the compiler itself.
   
     static int eval(Expr expr) {  
       if (expr instanceof Lit) {  
@@ -425,11 +425,11 @@ After all, a compiler isn't a menacing dragon, to be conquered by knight, but a 
 -  2: look at the code that generate the Expr that represent sum of resulting matrix multiplication. Try to understand it, and modify it so it return the sum of resulting matrix multiplication, but with each element squared. LExpr.eval() it. Is it about as fast as the code, unchanged, as the bottleneck is in the matrix multiplcation, not the squaring/summing? 
 
 <!--stackedit_data:
-eyJoaXN0b3J5IjpbLTYxOTk0NTUyNSwyMTE4OTgwMzY2LC03Nj
-EyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIsODA4MzMzMzU1
-LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMDIwOSwtMjA0MT
-g4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0xODI1OTcyNzgw
-LC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOTk0MjE1NywxNT
-QxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUzOTUsNTI3Njgw
-MTIyXX0=
+eyJoaXN0b3J5IjpbMzI1MTQ4NjksLTYxOTk0NTUyNSwyMTE4OT
+gwMzY2LC03NjEyNDQ5MzEsMTIyNDg2MjAwNywtNDY2OTEwNDIs
+ODA4MzMzMzU1LDEyMDQ5NjYxMTgsLTkzODczNjYsLTk5ODcxMD
+IwOSwtMjA0MTg4NTAxNCw3NTMyMzE5MDYsNjEwMjI0NjU3LC0x
+ODI1OTcyNzgwLC0xNTMyNzAwNDQ2LDE0ODIzNDQ2MTUsLTEwOT
+k0MjE1NywxNTQxMzU0NzQ0LC0yMzg1MTU5MDUsLTE4MTQ0NzUz
+OTVdfQ==
 -->
